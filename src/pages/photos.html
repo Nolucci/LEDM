@@ -498,58 +498,12 @@
     <script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/js/lightbox.min.js"></script>
     <!-- Custom JS -->
     <script src="../scripts/main.js"></script>
+    <!-- Photo Scanner JS -->
+    <script src="../scripts/photo-scanner.js"></script>
 
     <!-- Gallery Script -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Gallery filtering functionality
-            const filterButtons = document.querySelectorAll('.gallery-filters .btn');
-            const galleryItems = document.querySelectorAll('.gallery-item');
-            const loadMoreBtn = document.getElementById('loadMoreBtn');
-
-            // Filter functionality
-            filterButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const filter = this.getAttribute('data-filter');
-
-                    // Update active button
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    this.classList.add('active');
-
-                    // Filter gallery items
-                    galleryItems.forEach(item => {
-                        const category = item.getAttribute('data-category');
-
-                        if (filter === 'all' || category === filter) {
-                            item.style.display = 'block';
-                            setTimeout(() => {
-                                item.classList.add('visible');
-                            }, 50);
-                        } else {
-                            item.classList.remove('visible');
-                            setTimeout(() => {
-                                item.style.display = 'none';
-                            }, 300);
-                        }
-                    });
-                });
-            });
-
-            // Load more functionality (placeholder)
-            loadMoreBtn.addEventListener('click', function() {
-                // In a real implementation, this would load more photos from a server
-                this.innerHTML = '<i class="bi bi-check-circle me-2"></i>Toutes les photos chargées';
-                this.classList.add('disabled');
-                this.disabled = true;
-
-                // Show feedback
-                setTimeout(() => {
-                    this.innerHTML = '<i class="bi bi-plus-circle me-2"></i>Charger plus de photos';
-                    this.classList.remove('disabled');
-                    this.disabled = false;
-                }, 2000);
-            });
-
             // Lightbox configuration
             lightbox.option({
                 'resizeDuration': 200,
@@ -559,21 +513,7 @@
                 'imageFadeDuration': 300
             });
 
-            // Add fade-in animation to gallery items
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            });
-
-            galleryItems.forEach(item => {
-                observer.observe(item);
-            });
+            // Note: Les animations, filtres et pagination sont maintenant gérés par photo-scanner.js
         });
     </script>
 
