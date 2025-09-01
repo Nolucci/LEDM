@@ -12,6 +12,6 @@ COPY docs ./docs
 COPY photos ./photos
 
 # Optional: custom nginx config
-COPY ../docs/nginx-ledm-subdomain.conf /etc/nginx/conf.d/default.conf
+COPY ../nginx.conf /etc/nginx/conf.d/default.conf
 
 CMD ["nginx", "-g", "daemon off;"]
