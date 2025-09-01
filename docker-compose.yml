@@ -2,8 +2,15 @@ version: '3.8'
 
 services:
   web:
-    build: .
-    container_name: ledm-site
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: ledm-nginx
     ports:
-      - "4444:80"
-    restart: unless-stopped
+      - "4444:4444"
+    networks:
+      - site-network
+
+networks:
+  site-network:
+    driver: bridge

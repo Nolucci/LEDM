@@ -1,0 +1,17 @@
+FROM nginx:alpine
+
+WORKDIR /usr/share/nginx/html
+
+COPY index.html ./
+COPY src ./src
+COPY favicon.ico ./
+COPY robots.txt ./
+COPY sitemap.xml ./
+COPY config ./config
+COPY docs ./docs
+COPY photos ./photos
+
+# Optional: custom nginx config
+COPY ../docs/nginx-ledm-subdomain.conf /etc/nginx/conf.d/default.conf
+
+CMD ["nginx", "-g", "daemon off;"]

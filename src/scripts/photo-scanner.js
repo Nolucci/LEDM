@@ -228,7 +228,7 @@ class PhotoScanner {
                         <a href="contact.html" class="btn btn-primary">
                             <i class="bi bi-telephone me-2"></i>Nous Contacter
                         </a>
-                        <a href="../../index.html" class="btn btn-outline-primary">
+                        <a href="../../public/index.html" class="btn btn-outline-primary">
                             <i class="bi bi-house me-2"></i>Retour à l'accueil
                         </a>
                     </div>
