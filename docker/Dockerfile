@@ -2,9 +2,9 @@ FROM nginx:alpine
 
 WORKDIR /usr/share/nginx/html
 
-COPY index.html ./
+COPY public/index.html ./
 COPY src ./src
-COPY favicon.ico ./
+COPY public/favicon.ico ./
 COPY robots.txt ./
 COPY sitemap.xml ./
 COPY config ./config
