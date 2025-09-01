@@ -48,7 +48,7 @@ Ce site web présente l'association, ses activités (colonies de vacances et ate
 ## 🎨 Charte Graphique
 
 ### Couleurs Principales
-- **Primaire** : `#FFB5A7` (Coral pastel)
+- **Primaire** : `#87CEEB` (Bleu ciel)
 - **Secondaire** : `#A8E6CF` (Vert menthe)
 - **Accent** : `#FDF5BF` (Jaune pastel)
 - **Texte** : `#333333` (Gris foncé)
@@ -205,5 +205,6 @@ Modifiez les variables CSS dans `src/styles/main.css` :
 Ce projet est développé pour l'association "Les Enfants des Mousquetaires". Tous droits réservés.
 
 ---
+
 
 *Développé avec ❤️ pour l'épanouissement des enfants et des familles*
