@@ -42,14 +42,19 @@ class PhotoScanner {
             await this.scanFolder(folder);
         }
 
-        // Afficher les premières images
-        this.displayMoreImages();
+        // Vérifier s'il y a des images et afficher le message approprié
+        if (this.allImages.length === 0) {
+            this.displayNoPhotosMessage();
+        } else {
+            // Afficher les premières images
+            this.displayMoreImages();
 
-        // Initialiser le bouton "Load More"
-        this.initLoadMoreButton();
+            // Initialiser le bouton "Load More"
+            this.initLoadMoreButton();
 
-        // Réinitialiser les observers d'animation
-        this.initializeAnimations();
+            // Réinitialiser les observers d'animation
+            this.initializeAnimations();
+        }
     }
 
     /**
@@ -122,7 +127,7 @@ class PhotoScanner {
         const cardHtml = `
             <div class="col-md-6 col-lg-4 gallery-item fade-in" data-category="${image.category}">
                 <div class="gallery-card">
-                    <a href="${image.path}"
+                    <a href="${image.path}" target="_blank"
                        data-lightbox="gallery"
                        data-title="${image.title}">
                         <div class="gallery-image">
@@ -205,18 +210,59 @@ class PhotoScanner {
     }
 
     /**
+     * Affiche un message quand aucune photo n'est disponible
+     */
+    displayNoPhotosMessage() {
+        const noPhotosHtml = `
+            <div class="col-12">
+                <div class="no-photos-message text-center py-5">
+                    <div class="mb-4">
+                        <i class="bi bi-images display-1 text-muted"></i>
+                    </div>
+                    <h3 class="text-muted mb-3">Aucune photo disponible</h3>
+                    <p class="text-muted lead mb-4">
+                        Nous n'avons pas encore ajouté de photos dans cette section.
+                        <br>Revenez bientôt pour découvrir nos nouveaux souvenirs !
+                    </p>
+                    <div class="d-flex flex-wrap justify-content-center gap-3">
+                        <a href="contact.html" class="btn btn-primary">
+                            <i class="bi bi-telephone me-2"></i>Nous Contacter
+                        </a>
+                        <a href="../../index.html" class="btn btn-outline-primary">
+                            <i class="bi bi-house me-2"></i>Retour à l'accueil
+                        </a>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        this.galleryContainer.innerHTML = noPhotosHtml;
+
+        // Masquer le bouton "Load More"
+        if (this.loadMoreBtn) {
+            this.loadMoreBtn.style.display = 'none';
+        }
+    }
+
+    /**
      * Réinitialise l'affichage pour un nouveau filtre
      */
     resetDisplayForFilter(filter) {
         this.currentFilter = filter;
         this.displayedImages = 0;
         this.galleryContainer.innerHTML = '';
-        this.displayMoreImages();
 
-        // Réinitialiser les animations
-        setTimeout(() => {
-            this.initializeAnimations();
-        }, 100);
+        const filteredImages = this.getFilteredImages();
+
+        if (filteredImages.length === 0) {
+            this.displayNoPhotosMessage();
+        } else {
+            this.displayMoreImages();
+            // Réinitialiser les animations
+            setTimeout(() => {
+                this.initializeAnimations();
+            }, 100);
+        }
     }
 
     /**

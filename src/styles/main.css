@@ -844,3 +844,76 @@ footer a.text-light-50:hover {
     padding: var(--space-lg) 0;
   }
 }
+
+/* ============================================
+   NO PHOTOS MESSAGE STYLES
+   ============================================ */
+
+.no-photos-message {
+    background: var(--color-light);
+    border-radius: 15px;
+    padding: var(--space-xl);
+    margin: var(--space-lg) 0;
+    border: 2px dashed var(--color-muted);
+    transition: all 0.3s ease;
+}
+
+.no-photos-message:hover {
+    background: var(--color-primary-light);
+    border-color: var(--color-primary);
+}
+
+.no-photos-message .display-1 {
+    font-size: 4rem;
+    margin-bottom: var(--space-md);
+    opacity: 0.6;
+}
+
+.no-photos-message h3 {
+    color: var(--color-text);
+    font-family: var(--font-secondary);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--space-md);
+}
+
+.no-photos-message .lead {
+    color: var(--color-muted);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto var(--space-lg);
+}
+
+.no-photos-message .btn {
+    margin: var(--space-xs);
+    padding: var(--space-sm) var(--space-lg);
+    font-weight: var(--font-weight-medium);
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.no-photos-message .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .no-photos-message {
+        padding: var(--space-lg);
+        margin: var(--space-md) 0;
+    }
+
+    .no-photos-message .display-1 {
+        font-size: 3rem;
+    }
+
+    .no-photos-message .lead {
+        font-size: 1rem;
+    }
+
+    .no-photos-message .btn {
+        width: 100%;
+        margin: var(--space-xs) 0;
+    }
+}
