@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Découvrez nos photos de colonies de vacances et spectacles théâtre des Enfants des Mousquetaires">
+    <title>Galerie Photos - Les Enfants des Mousquetaires</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lightbox CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/css/lightbox.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top custom-navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="../../index.html">
+                <img src="../assets/images/LOGO.jpeg" alt="Logo Les Enfants des Mousquetaires" class="me-2" style="height: 40px; width: auto;">
+                Les Enfants des Mousquetaires
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="association.html">L'Association</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Nos Activités
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="colonies.html">Colonies de Vacances</a></li>
+                            <li><a class="dropdown-item" href="theatre.html">Ateliers Théâtre</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="partenaires.html">Nos Partenaires</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="photos.html">Photos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section py-5">
+        <div class="container">
+            <div class="row align-items-center" style="min-height: 60vh; padding-top: 80px;">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-4 fw-bold text-primary mb-4 fade-in">
+                        <i class="bi bi-camera me-3"></i>Galerie Photos
+                    </h1>
+                    <p class="lead mb-4 fade-in">
+                        Découvrez les moments magiques de nos colonies de vacances et de nos spectacles théâtre
+                        à travers cette galerie de souvenirs inoubliables.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="py-4 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="btn-group gallery-filters" role="group" aria-label="Filtres de galerie">
+                        <button type="button" class="btn btn-outline-primary active" data-filter="all">
+                            <i class="bi bi-grid me-2"></i>Toutes les photos
+                        </button>
+                        <button type="button" class="btn btn-outline-primary" data-filter="colonies">
+                            <i class="bi bi-sun me-2"></i>Colonies de Vacances
+                        </button>
+                        <button type="button" class="btn btn-outline-primary" data-filter="theatre">
+                            <i class="bi bi-camera-video me-2"></i>Spectacles Théâtre
+                        </button>
+                        <button type="button" class="btn btn-outline-primary" data-filter="activites">
+                            <i class="bi bi-palette me-2"></i>Activités
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-3" id="photoGallery">
+                <!-- Colonies de Vacances Photos -->
+                <div class="col-md-6 col-lg-4 gallery-item fade-in" data-category="colonies">
+                    <div class="gallery-card">
+                        <a href="https://via.placeholder.com/600x400/FFB5A7/FFFFFF?text=Colonie+Été+2023"
+                           data-lightbox="gallery"
+                           data-title="Colonie d'été 2023 - Activités nature">
+                            <div class="gallery-image">
+                                <img src="https://via.placeholder.com/400x300/FFB5A7/FFFFFF?text=Colonie+Été+2023"
+                                     alt="Colonie d'été 2023" class="img-fluid">
+                                <div class="gallery-overlay">
+                                    <i class="bi bi-zoom-in"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="gallery-info p-3">
+                            <h6 class="fw-bold mb-1">Colonie d'Été 2023</h6>
+                            <small class="text-muted">Activités nature et grands jeux</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 gallery-item fade-in" data-category="colonies">
+                    <div class="gallery-card">
+                        <a href="https://via.placeholder.com/600x400/A8E6CF/FFFFFF?text=Sortie+Plage"
+                           data-lightbox="gallery"
+                           data-title="Sortie à la plage - Été 2023">
+                            <div class="gallery-image">
+                                <img src="https://via.placeholder.com/400x300/A8E6CF/FFFFFF?text=Sortie+Plage"
+                                     alt="Sortie plage" class="img-fluid">
+                                <div class="gallery-overlay">
+                                    <i class="bi bi-zoom-in"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="gallery-info p-3">
+                            <h6 class="fw-bold mb-1">Sortie Plage</h6>
+                            <small class="text-muted">Découverte du littoral méditerranéen</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 gallery-item fade-in" data-category="activites">
+                    <div class="gallery-card">
+                        <a href="https://via.placeholder.com/600x400/FDF5BF/333333?text=Atelier+Créatif"
+                           data-lightbox="gallery"
+                           data-title="Atelier créatif - Peinture et arts plastiques">
+                            <div class="gallery-image">
+                                <img src="https://via.placeholder.com/400x300/FDF5BF/333333?text=Atelier+Créatif"
+                                     alt="Atelier créatif" class="img-fluid">
+                                <div class="gallery-overlay">
+                                    <i class="bi bi-zoom-in"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="gallery-info p-3">
+                            <h6 class="fw-bold mb-1">Atelier Créatif</h6>
+                            <small class="text-muted">Expression artistique et peinture</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Théâtre Photos -->
+                <div class="col-md-6 col-lg-4 gallery-item fade-in" data-category="theatre">
+                    <div class="gallery-card">
+                        <a href="https://via.placeholder.com/600x400/FFD4CC/333333?text=Spectacle+Enfants"
+                           data-lightbox="gallery"
+                           data-title="Spectacle des enfants - Juin 2023">
+                            <div class="gallery-image">
+                                <img src="https://via.placeholder.com/400x300/FFD4CC/333333?text=Spectacle+Enfants"
+                                     alt="Spectacle enfants" class="img-fluid">
+                                <div class="gallery-overlay">
+                                    <i class="bi bi-zoom-in"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="gallery-info p-3">
+                            <h6 class="fw-bold mb-1">Spectacle des Enfants</h6>
+                            <small class="text-muted">Représentation de fin d'année</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 gallery-item fade-in" data-category="theatre">
+                    <div class="gallery-card">
+                        <a href="https://via.placeholder.com/600x400/C1F0D8/333333?text=Atelier+Théâtre"
+                           data-lightbox="gallery"
+                           data-title="Atelier théâtre - Répétitions">
+                            <div class="gallery-image">
+                                <img src="https://via.placeholder.com/400x300/C1F0D8/333333?text=Atelier+Théâtre"
+                                     alt="Atelier théâtre" class="img-fluid">
+                                <div class="gallery-overlay">
+                                    <i class="bi bi-zoom-in"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="gallery-info p-3">
+                            <h6 class="fw-bold mb-1">Atelier Théâtre</h6>
+                            <small class="text-muted">Répétitions du groupe adolescents</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 gallery-item fade-in" data-category="theatre">
+                    <div class="gallery-card">
+                        <a href="https://via.placeholder.com/600x400/FEFADF/333333?text=Costumes+Spectacle"
+                           data-lightbox="gallery"
+                           data-title="Création de costumes - Atelier préparation">
+                            <div class="gallery-image">
+                                <img src="https://via.placeholder.com/400x300/FEFADF/333333?text=Costumes+Spectacle"
+                                     alt="Création costumes" class="img-fluid">
+                                <div class="gallery-overlay">
+                                    <i class="bi bi-zoom-in"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="gallery-info p-3">
+                            <h6 class="fw-bold mb-1">Création de Costumes</h6>
+                            <small class="text-muted">Préparation des spectacles</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- More Colonies Photos -->
+                <div class="col-md-6 col-lg-4 gallery-item fade-in" data-category="colonies">
+                    <div class="gallery-card">
+                        <a href="https://via.placeholder.com/600x400/FF9D8B/FFFFFF?text=Grand+Jeu"
+                           data-lightbox="gallery"
+                           data-title="Grand jeu collectif - Animation de groupe">
+                            <div class="gallery-image">
+                                <img src="https://via.placeholder.com/400x300/FF9D8B/FFFFFF?text=Grand+Jeu"
+                                     alt="Grand jeu" class="img-fluid">
+                                <div class="gallery-overlay">
+                                    <i class="bi bi-zoom-in"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="gallery-info p-3">
+                            <h6 class="fw-bold mb-1">Grand Jeu</h6>
+                            <small class="text-muted">Animation collective en extérieur</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 gallery-item fade-in" data-category="activites">
+                    <div class="gallery-card">
+                        <a href="https://via.placeholder.com/600x400/8FD9B0/FFFFFF?text=Sport+Collectif"
+                           data-lightbox="gallery"
+                           data-title="Activité sportive - Jeux d'équipe">
+                            <div class="gallery-image">
+                                <img src="https://via.placeholder.com/400x300/8FD9B0/FFFFFF?text=Sport+Collectif"
+                                     alt="Sport collectif" class="img-fluid">
+                                <div class="gallery-overlay">
+                                    <i class="bi bi-zoom-in"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="gallery-info p-3">
+                            <h6 class="fw-bold mb-1">Sport Collectif</h6>
+                            <small class="text-muted">Jeux d'équipe et fair-play</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 gallery-item fade-in" data-category="colonies">
+                    <div class="gallery-card">
+                        <a href="https://via.placeholder.com/600x400/FCEF9F/333333?text=Veillée+Contes"
+                           data-lightbox="gallery"
+                           data-title="Veillée contes - Moment calme en soirée">
+                            <div class="gallery-image">
+                                <img src="https://via.placeholder.com/400x300/FCEF9F/333333?text=Veillée+Contes"
+                                     alt="Veillée contes" class="img-fluid">
+                                <div class="gallery-overlay">
+                                    <i class="bi bi-zoom-in"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="gallery-info p-3">
+                            <h6 class="fw-bold mb-1">Veillée Contes</h6>
+                            <small class="text-muted">Moment de détente en soirée</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- More Theatre Photos -->
+                <div class="col-md-6 col-lg-4 gallery-item fade-in" data-category="theatre">
+                    <div class="gallery-card">
+                        <a href="https://via.placeholder.com/600x400/B5D4FF/333333?text=Spectacle+Adultes"
+                           data-lightbox="gallery"
+                           data-title="Spectacle groupe adultes - Soirée théâtre">
+                            <div class="gallery-image">
+                                <img src="https://via.placeholder.com/400x300/B5D4FF/333333?text=Spectacle+Adultes"
+                                     alt="Spectacle adultes" class="img-fluid">
+                                <div class="gallery-overlay">
+                                    <i class="bi bi-zoom-in"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="gallery-info p-3">
+                            <h6 class="fw-bold mb-1">Spectacle Adultes</h6>
+                            <small class="text-muted">Soirée théâtre tout public</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 gallery-item fade-in" data-category="activites">
+                    <div class="gallery-card">
+                        <a href="https://via.placeholder.com/600x400/E6B3FF/333333?text=Atelier+Musique"
+                           data-lightbox="gallery"
+                           data-title="Atelier musique - Expression sonore">
+                            <div class="gallery-image">
+                                <img src="https://via.placeholder.com/400x300/E6B3FF/333333?text=Atelier+Musique"
+                                     alt="Atelier musique" class="img-fluid">
+                                <div class="gallery-overlay">
+                                    <i class="bi bi-zoom-in"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="gallery-info p-3">
+                            <h6 class="fw-bold mb-1">Atelier Musique</h6>
+                            <small class="text-muted">Expression sonore et rythmique</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 gallery-item fade-in" data-category="colonies">
+                    <div class="gallery-card">
+                        <a href="https://via.placeholder.com/600x400/FFE5B4/333333?text=Repas+Convivial"
+                           data-lightbox="gallery"
+                           data-title="Repas convivial - Moments de partage">
+                            <div class="gallery-image">
+                                <img src="https://via.placeholder.com/400x300/FFE5B4/333333?text=Repas+Convivial"
+                                     alt="Repas convivial" class="img-fluid">
+                                <div class="gallery-overlay">
+                                    <i class="bi bi-zoom-in"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="gallery-info p-3">
+                            <h6 class="fw-bold mb-1">Repas Convivial</h6>
+                            <small class="text-muted">Moments de partage à table</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <button class="btn btn-outline-primary btn-lg" id="loadMoreBtn">
+                        <i class="bi bi-plus-circle me-2"></i>Charger plus de photos
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="display-5 fw-bold text-primary mb-4 fade-in">Partagez Vos Souvenirs</h2>
+                    <p class="lead mb-4 fade-in">
+                        Ces photos témoignent de la richesse de nos activités et de la joie partagée
+                        lors de nos colonies et ateliers. Chaque image raconte une histoire,
+                        un moment d'apprentissage, de créativité ou de complicité.
+                    </p>
+
+                    <div class="row g-4 mt-4">
+                        <div class="col-md-4">
+                            <div class="text-center fade-in">
+                                <i class="bi bi-camera display-4 text-primary mb-3"></i>
+                                <h5 class="fw-bold">Photos Libres</h5>
+                                <p class="small text-muted">
+                                    Toutes nos photos sont prises avec l'accord des familles
+                                    et des participants.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="text-center fade-in">
+                                <i class="bi bi-download display-4 text-primary mb-3"></i>
+                                <h5 class="fw-bold">Téléchargement</h5>
+                                <p class="small text-muted">
+                                    Les familles peuvent demander les photos
+                                    de leurs enfants en nous contactant.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="text-center fade-in">
+                                <i class="bi bi-shield-check display-4 text-primary mb-3"></i>
+                                <h5 class="fw-bold">Respect & Sécurité</h5>
+                                <p class="small text-muted">
+                                    Nous respectons la vie privée et les droits
+                                    à l'image de tous nos participants.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA Section -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="display-5 fw-bold mb-4 fade-in">Créons de Nouveaux Souvenirs</h2>
+                    <p class="lead mb-4 fade-in">
+                        Rejoignez-nous pour vivre des moments exceptionnels et créer vos propres souvenirs
+                        au sein de notre grande famille des Enfants des Mousquetaires !
+                    </p>
+                    <div class="d-flex flex-wrap justify-content-center gap-3 fade-in">
+                        <a href="contact.html" class="btn btn-light btn-lg">
+                            <i class="bi bi-telephone me-2"></i>Nous Contacter
+                        </a>
+                        <a href="colonies.html" class="btn btn-outline-light btn-lg">
+                            <i class="bi bi-sun me-2"></i>Nos Colonies
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-5">
+        <div class="container">
+            <div class="row g-4 text-center text-lg-start">
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-3">Les Enfants des Mousquetaires</h5>
+                    <p class="text-light-50">
+                        Association de colonies de vacances inclusives et d'ateliers théâtre
+                        basée à Béziers, offrant une approche familiale et bienveillante.
+                    </p>
+                </div>
+
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-3">Contact</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <i class="bi bi-geo-alt me-2"></i>Béziers, France
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-telephone me-2"></i>06 17 65 44 68
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-envelope me-2"></i>lesenfantsdesmousquetaires@yahoo.fr
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-3">Liens Rapides</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../../index.html" class="text-light-50 text-decoration-none">Accueil</a></li>
+                        <li><a href="association.html" class="text-light-50 text-decoration-none">L'Association</a></li>
+                        <li><a href="colonies.html" class="text-light-50 text-decoration-none">Colonies de Vacances</a></li>
+                        <li><a href="theatre.html" class="text-light-50 text-decoration-none">Ateliers Théâtre</a></li>
+                        <li><a href="contact.html" class="text-light-50 text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="my-4">
+
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0 text-light-50">
+                        &copy; 2025 Les Enfants des Mousquetaires. Tous droits réservés.
+                    </p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0 text-light-50">
+                        Organisation à but non lucratif
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Lightbox JS -->
+    <script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/js/lightbox.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../scripts/main.js"></script>
+
+    <!-- Gallery Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Gallery filtering functionality
+            const filterButtons = document.querySelectorAll('.gallery-filters .btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const loadMoreBtn = document.getElementById('loadMoreBtn');
+
+            // Filter functionality
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+
+                    // Filter gallery items
+                    galleryItems.forEach(item => {
+                        const category = item.getAttribute('data-category');
+
+                        if (filter === 'all' || category === filter) {
+                            item.style.display = 'block';
+                            setTimeout(() => {
+                                item.classList.add('visible');
+                            }, 50);
+                        } else {
+                            item.classList.remove('visible');
+                            setTimeout(() => {
+                                item.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+
+            // Load more functionality (placeholder)
+            loadMoreBtn.addEventListener('click', function() {
+                // In a real implementation, this would load more photos from a server
+                this.innerHTML = '<i class="bi bi-check-circle me-2"></i>Toutes les photos chargées';
+                this.classList.add('disabled');
+                this.disabled = true;
+
+                // Show feedback
+                setTimeout(() => {
+                    this.innerHTML = '<i class="bi bi-plus-circle me-2"></i>Charger plus de photos';
+                    this.classList.remove('disabled');
+                    this.disabled = false;
+                }, 2000);
+            });
+
+            // Lightbox configuration
+            lightbox.option({
+                'resizeDuration': 200,
+                'wrapAround': true,
+                'albumLabel': 'Image %1 sur %2',
+                'fadeDuration': 300,
+                'imageFadeDuration': 300
+            });
+
+            // Add fade-in animation to gallery items
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            galleryItems.forEach(item => {
+                observer.observe(item);
+            });
+        });
+    </script>
+
+    <!-- Gallery Styles -->
+    <style>
+        .gallery-card {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition-base);
+            height: 100%;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .gallery-image {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-image img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform var(--transition-base);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 181, 167, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity var(--transition-base);
+        }
+
+        .gallery-overlay i {
+            color: white;
+            font-size: 2rem;
+        }
+
+        .gallery-card:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-card:hover .gallery-image img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .gallery-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .gallery-filters .btn {
+            margin: 0.25rem;
+            border-radius: 25px;
+        }
+
+        .gallery-filters .btn.active {
+            background-color: var(--color-primary);
+            border-color: var(--color-primary);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-image img {
+                height: 200px;
+            }
+
+            .gallery-filters .btn {
+                font-size: 0.875rem;
+                padding: 0.5rem 1rem;
+            }
+        }
+    </style>
+</body>
+</html>

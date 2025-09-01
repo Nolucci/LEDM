@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Les Enfants des Mousquetaires - Association de colonies de vacances inclusives et ateliers théâtre à Béziers">
+    <meta name="keywords" content="colonies de vacances, théâtre enfants, Béziers, association, vacances inclusives, ateliers créatifs">
+    <meta name="author" content="Les Enfants des Mousquetaires">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Les Enfants des Mousquetaires - Colonies de Vacances & Ateliers Théâtre">
+    <meta property="og:description" content="Association de colonies de vacances inclusives et ateliers théâtre à Béziers. Une approche familiale et bienveillante pour l'épanouissement des enfants.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Les Enfants des Mousquetaires">
+    <meta name="twitter:description" content="Association de colonies de vacances inclusives et ateliers théâtre à Béziers">
+
+    <title>Les Enfants des Mousquetaires - Colonies de Vacances & Ateliers Théâtre</title>
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="src/styles/main.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top custom-navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <img src="src/assets/images/LOGO.jpeg" alt="Logo Les Enfants des Mousquetaires" class="me-2" style="height: 40px; width: auto;">
+                Les Enfants des Mousquetaires
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="src/pages/association.html">L'Association</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Nos Activités
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="src/pages/colonies.html">Colonies de Vacances</a></li>
+                            <li><a class="dropdown-item" href="src/pages/theatre.html">Ateliers Théâtre</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="src/pages/partenaires.html">Nos Partenaires</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="src/pages/photos.html">Photos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="src/pages/contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold text-primary mb-4">
+                        Bienvenue chez Les Enfants des Mousquetaires
+                    </h1>
+                    <p class="lead mb-4">
+                        Découvrez nos colonies de vacances inclusives et nos ateliers théâtre dans une ambiance familiale et bienveillante.
+                        Depuis Béziers, nous créons des souvenirs inoubliables pour tous les enfants.
+                    </p>
+                    <div class="hero-buttons-container mb-4">
+                        <div class="d-flex flex-wrap justify-content-center gap-3 mb-3">
+                            <a href="src/pages/colonies.html" class="btn btn-custom-primary btn-lg">
+                                <i class="bi bi-sun me-2"></i>Nos Colonies
+                                <span class="btn-shimmer"></span>
+                            </a>
+                            <a href="src/pages/theatre.html" class="btn btn-custom-secondary btn-lg">
+                                <i class="bi bi-camera-video me-2"></i>Ateliers Théâtre
+                                <span class="btn-shimmer"></span>
+                            </a>
+                        </div>
+                        <div class="d-flex flex-wrap justify-content-center gap-3 mb-3">
+                            <a href="src/assets/documents/DEPLIANT 1.pdf" class="btn btn-custom-accent btn-lg" download>
+                                <i class="bi bi-download me-2"></i>Brochure 1
+                                <span class="btn-shimmer"></span>
+                            </a>
+                            <a href="src/assets/documents/DEPLIANT 2.pdf" class="btn btn-custom-info btn-lg" download>
+                                <i class="bi bi-download me-2"></i>Brochure 2
+                                <span class="btn-shimmer"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image text-center">
+                        <img src="src/assets/images/LOGO.jpeg" alt="Logo Les Enfants des Mousquetaires" class="img-fluid rounded shadow" style="max-height: 400px; width: auto;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="display-5 fw-bold text-primary mb-3">Nos Services</h2>
+                    <p class="lead text-muted">
+                        Une approche inclusive et familiale pour des vacances et des activités enrichissantes
+                    </p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm service-card">
+                        <div class="card-body text-center p-4">
+                            <div class="service-icon mb-3">
+                                <i class="bi bi-sun-fill"></i>
+                            </div>
+                            <h5 class="card-title fw-bold">Colonies de Vacances</h5>
+                            <p class="card-text">
+                                Séjours inclusifs pour enfants et adolescents avec des activités variées
+                                dans une ambiance familiale et des petits effectifs.
+                            </p>
+                            <a href="src/pages/colonies.html" class="btn btn-outline-primary">En savoir plus</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm service-card">
+                        <div class="card-body text-center p-4">
+                            <div class="service-icon mb-3">
+                                <i class="bi bi-camera-video"></i>
+                            </div>
+                            <h5 class="card-title fw-bold">Ateliers Théâtre</h5>
+                            <p class="card-text">
+                                Création de spectacles pour tous les âges : enfants, adolescents et adultes.
+                                Développez votre créativité et votre confiance en soi.
+                            </p>
+                            <a href="src/pages/theatre.html" class="btn btn-outline-primary">En savoir plus</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm service-card">
+                        <div class="card-body text-center p-4">
+                            <div class="service-icon mb-3">
+                                <i class="bi bi-heart-fill"></i>
+                            </div>
+                            <h5 class="card-title fw-bold">Approche Inclusive</h5>
+                            <p class="card-text">
+                                Accueil social et familial pour tous. Nous croyons que chaque enfant
+                                mérite de vivre des vacances enrichissantes et joyeuses.
+                            </p>
+                            <a href="src/pages/association.html" class="btn btn-outline-primary">Notre Mission</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-image-placeholder mb-4 mb-lg-0">
+                        <i class="bi bi-people display-1 text-muted"></i>
+                        <p class="text-muted">Photo de l'équipe</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="display-5 fw-bold text-primary mb-4">Une Association Familiale</h2>
+                    <p class="lead mb-4">
+                        Basée à Béziers, notre association promeut l'inclusion sociale et offre des expériences
+                        enrichissantes à tous les enfants, quelles que soient leurs origines.
+                    </p>
+                    <ul class="list-unstyled">
+                        <li class="d-flex align-items-center mb-3">
+                            <i class="bi bi-check-circle-fill text-success me-3"></i>
+                            <span>Ambiance familiale et bienveillante</span>
+                        </li>
+                        <li class="d-flex align-items-center mb-3">
+                            <i class="bi bi-check-circle-fill text-success me-3"></i>
+                            <span>Petits effectifs pour un suivi personnalisé</span>
+                        </li>
+                        <li class="d-flex align-items-center mb-3">
+                            <i class="bi bi-check-circle-fill text-success me-3"></i>
+                            <span>Équipe qualifiée et passionnée</span>
+                        </li>
+                        <li class="d-flex align-items-center mb-3">
+                            <i class="bi bi-check-circle-fill text-success me-3"></i>
+                            <span>Approche inclusive et sociale</span>
+                        </li>
+                    </ul>
+                    <a href="src/pages/association.html" class="btn btn-primary">Découvrir l'Association</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="display-5 fw-bold mb-4">Prêt à Nous Rejoindre ?</h2>
+                    <p class="lead mb-4">
+                        Contactez-nous pour plus d'informations sur nos colonies de vacances
+                        et nos ateliers théâtre. Nous serons ravis de vous accueillir !
+                    </p>
+                    <div class="d-flex flex-wrap justify-content-center gap-2">
+                        <a href="src/pages/contact.html" class="btn btn-light btn-lg">
+                            <i class="bi bi-telephone me-2"></i>Nous Contacter
+                        </a>
+                        <a href="src/pages/photos.html" class="btn btn-outline-light btn-lg">
+                            <i class="bi bi-images me-2"></i>Voir nos Photos
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-5">
+        <div class="container">
+            <div class="row g-4 text-center text-lg-start">
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-3">Les Enfants des Mousquetaires</h5>
+                    <p class="text-light-50">
+                        Association de colonies de vacances inclusives et d'ateliers théâtre
+                        basée à Béziers, offrant une approche familiale et bienveillante.
+                    </p>
+                </div>
+
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-3">Contact</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <i class="bi bi-geo-alt me-2"></i>Béziers, France
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-telephone me-2"></i>06 17 65 44 68
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-envelope me-2"></i>lesenfantsdesmousquetaires@yahoo.fr
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-3">Liens Rapides</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../../index.html" class="text-light-50 text-decoration-none">Accueil</a></li>
+                        <li><a href="src/pages/association.html" class="text-light-50 text-decoration-none">L'Association</a></li>
+                        <li><a href="src/pages/colonies.html" class="text-light-50 text-decoration-none">Colonies de Vacances</a></li>
+                        <li><a href="src/pages/theatre.html" class="text-light-50 text-decoration-none">Ateliers Théâtre</a></li>
+                        <li><a href="src/pages/contact.html" class="text-light-50 text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="my-4">
+
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0 text-light-50">
+                        &copy; 2025 Les Enfants des Mousquetaires. Tous droits réservés.
+                    </p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0 text-light-50">
+                        Organisation à but non lucratif
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="src/scripts/main.js"></script>
+</body>
+</html>

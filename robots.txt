@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.lesenfantsdesmousquetaires.fr/sitemap.xml
+
+# Disallow crawling of potential future admin areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.git/
+
+# Allow all search engines to crawl the site
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Crawl delay (optional - 1 second between requests)
+Crawl-delay: 1
