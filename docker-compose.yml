@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: ledm-site
+    ports:
+      - "4444:80"
+    restart: unless-stopped
