@@ -5,7 +5,6 @@ FROM nginx:stable-alpine
 RUN rm -rf /usr/share/nginx/html/*
 
 # Copy static site files
-COPY public/ /usr/share/nginx/html/
 COPY src/pages/ /usr/share/nginx/html/
 COPY src/assets/ /usr/share/nginx/html/assets/
 COPY src/styles/ /usr/share/nginx/html/styles/
