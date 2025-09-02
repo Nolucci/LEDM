@@ -81,13 +81,13 @@
 
 .gallery__filter-button:hover {
   background-color: var(--color-primary);
-  color: var(--color-text);
+  color: var(--color-white);
   border-color: var(--color-primary);
 }
 
 .gallery__filter-button.active {
   background-color: var(--color-primary);
-  color: var(--color-text);
+  color: var(--color-white);
   border-color: var(--color-primary);
   font-weight: var(--font-weight-medium);
 }

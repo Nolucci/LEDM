@@ -2,38 +2,52 @@
    MAIN STYLESHEET - Les Enfants des Mousquetaires
    ============================================ */
 
+/* Police Florida Vibes locale */
+@font-face {
+  font-family: 'Florida Vibes';
+  src: url('../fonts/Florida Vibes.otf') format('opentype'),
+       url('../fonts/Florida Vibes.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* CSS Custom Properties (Design Tokens) */
 :root {
-  /* Colors - Pastel palette */
-  --color-primary: #87CEEB;        /* Bleu ciel */
-  --color-secondary: #A8E6CF;      /* Vert menthe */
-  --color-accent: #FDF5BF;         /* Jaune pâle */
-  --color-text: #3D405B;           /* Bleu marine foncé */
-  --color-background: #F0F8FF;     /* Bleu alice */
+  /* Colors - Thème Bleu/Orange/Jaune/Beige */
+  --color-primary: #2E75B6;        /* Bleu océan profond */
+  --color-secondary: #FF6B35;      /* Orange vif et chaleureux */
+  --color-accent: #F4C542;         /* Jaune solaire */
+  --color-beige: #F5E6D3;          /* Beige doux */
+  --color-text: #000000;           /* Noir pur pour contraste maximal */
+  --color-background: #FFFFFF;     /* Blanc pur */
 
   /* Extended color palette */
-  --color-primary-dark: #5DADE2;
-  --color-primary-light: #D6EAF8;
-  --color-secondary-dark: #8FD9B0;
-  --color-secondary-light: #C1F0D8;
-  --color-accent-dark: #FCEF9F;
-  --color-accent-light: #FEFADF;
+  --color-primary-dark: #1B4A73;
+  --color-primary-light: #E8F1FA;
+  --color-secondary-dark: #CC4A1A;
+  --color-secondary-light: #FFE8E1;
+  --color-accent-dark: #D4A315;
+  --color-accent-light: #FDF5D6;
+  --color-beige-dark: #c1aa8b;
+  --color-beige-light: #e7d1b9;
 
   /* Neutral colors */
   --color-white: #FFFFFF;
   --color-light: #F8F9FA;
-  --color-muted: #6C757D;
-  --color-dark: #212529;
+  --color-muted: #000000;          /* Noir pur pour meilleure lisibilité */
+  --color-dark: #2c2c2c;           /* Fond sombre pour texte blanc */
 
-  /* Status colors */
-  --color-success: #A8E6CF;
-  --color-warning: #FDF5BF;
-  --color-danger: #FFB5A7;
-  --color-info: #B5D4FF;
+  /* Status colors with better contrast */
+  --color-success: #228B22;
+  --color-warning: #B8860B;
+  --color-danger: #DC143C;
+  --color-info: #003D82;
 
-  /* Typography */
-  --font-primary: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-secondary: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  /* Typography - Florida Vibes pour les titres et Poppins pour le texte */
+  --font-heading: 'Florida Vibes', 'Georgia', serif;
+  --font-primary: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-secondary: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
   /* Font weights */
   --font-weight-light: 300;
@@ -101,23 +115,60 @@ body {
 }
 
 /* Typography overrides */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-secondary);
-  font-weight: var(--font-weight-bold);
+h1, h2 {
+  font-family: var(--font-heading) !important;
+  font-weight: normal !important;
+  line-height: 1.2;
+  color: var(--color-text);
+  margin-bottom: var(--space-md);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Force Florida Vibes for all h1 and h2, even with Bootstrap classes */
+h1.fw-bold, h2.fw-bold,
+h1.display-1, h1.display-2, h1.display-3, h1.display-4, h1.display-5, h1.display-6,
+h2.display-1, h2.display-2, h2.display-3, h2.display-4, h2.display-5, h2.display-6,
+.card-title h1, .card-title h2,
+h1.card-title, h2.card-title {
+  font-family: var(--font-heading) !important;
+  font-weight: normal !important;
+}
+
+h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-semibold);
   line-height: 1.2;
   color: var(--color-text);
   margin-bottom: var(--space-md);
 }
 
-.display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
-  font-family: var(--font-secondary);
-  font-weight: var(--font-weight-bold);
+.display-1, .display-2 {
+  font-family: var(--font-heading);
+  font-weight: normal;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.display-3, .display-4, .display-5, .display-6 {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-semibold);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Styles spécifiques pour les éléments de titre */
+.navbar-brand {
+  font-family: var(--font-primary) !important;
+  font-weight: var(--font-weight-semibold) !important;
+}
+
+.card-title {
+  font-family: var(--font-primary) !important;
+  font-weight: var(--font-weight-semibold) !important;
 }
 
 .lead {
   font-size: 1.125rem;
   font-weight: var(--font-weight-normal);
-  color: var(--color-muted);
+  color: var(--color-text);
 }
 
 /* ============================================
@@ -126,7 +177,10 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Primary color overrides */
 .text-primary { color: var(--color-primary) !important; }
-.bg-primary { background-color: var(--color-primary) !important; }
+.bg-primary {
+  background-color: var(--color-beige) !important;
+  color: var(--color-text) !important;
+}
 .border-primary { border-color: var(--color-primary) !important; }
 
 .btn-primary {
@@ -170,7 +224,7 @@ h1, h2, h3, h4, h5, h6 {
 .btn-secondary {
   background-color: var(--color-secondary);
   border-color: var(--color-secondary);
-  color: var(--color-text);
+  color: var(--color-white);
   font-weight: var(--font-weight-semibold);
 }
 
@@ -178,7 +232,7 @@ h1, h2, h3, h4, h5, h6 {
 .btn-secondary:focus {
   background-color: var(--color-secondary-dark);
   border-color: var(--color-secondary-dark);
-  color: var(--color-text);
+  color: var(--color-white);
 }
 
 .btn-outline-secondary {
@@ -190,7 +244,7 @@ h1, h2, h3, h4, h5, h6 {
 .btn-outline-secondary:focus {
   background-color: var(--color-secondary);
   border-color: var(--color-secondary);
-  color: var(--color-text);
+  color: var(--color-white);
 }
 
 /* ============================================
@@ -245,56 +299,77 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: var(--shadow-lg);
 }
 
-/* Primary button - Bleu ciel */
+/* Primary button - Bleu océan */
 .btn-custom-primary {
   background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
   border-color: var(--color-primary-dark);
+  color: var(--color-white);
+  transform: translateY(0) scale(1);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 4px 15px rgba(46, 117, 182, 0.3);
 }
 
 .btn-custom-primary:hover {
-  background: linear-gradient(135deg, var(--color-primary-dark), #4A90E2);
-  border-color: #4A90E2;
+  background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+  border-color: var(--color-primary);
+  color: var(--color-white);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(46, 117, 182, 0.4);
 }
 
-/* Secondary button - Vert menthe */
+/* Secondary button - Orange chaleureux */
 .btn-custom-secondary {
   background: linear-gradient(135deg, var(--color-secondary), var(--color-secondary-dark));
-  color: var(--color-text);
+  color: var(--color-white);
   border-color: var(--color-secondary-dark);
+  transform: translateY(0) scale(1);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
 }
 
 .btn-custom-secondary:hover {
-  background: linear-gradient(135deg, var(--color-secondary-dark), #66C2A5);
-  color: var(--color-text);
-  border-color: #66C2A5;
+  background: linear-gradient(135deg, var(--color-secondary-dark), var(--color-secondary));
+  color: var(--color-white);
+  border-color: var(--color-secondary);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
 }
 
-/* Accent button - Jaune pâle */
+/* Accent button - Jaune solaire */
 .btn-custom-accent {
   background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
   color: var(--color-text);
-  border-color: #F7DC6F;
+  border-color: var(--color-accent-dark);
+  transform: translateY(0) scale(1);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 4px 15px rgba(244, 197, 66, 0.3);
 }
 
 .btn-custom-accent:hover {
-  background: linear-gradient(135deg, var(--color-accent-dark), #F7DC6F);
+  background: linear-gradient(135deg, var(--color-accent-dark), var(--color-accent));
   color: var(--color-text);
-  border-color: #F7DC6F;
+  border-color: var(--color-accent);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(244, 197, 66, 0.4);
 }
 
-/* Info button - Orange pastel */
+/* Beige button - Nouveau style beige */
 .btn-custom-info {
-  background: linear-gradient(135deg, #FFD4B3, #FFBF9B);
+  background: linear-gradient(135deg, var(--color-beige), var(--color-beige-dark));
   color: var(--color-text);
-  border-color: #FFBF9B;
+  border-color: var(--color-beige-dark);
+  transform: translateY(0);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .btn-custom-info:hover {
-  background: linear-gradient(135deg, #FFBF9B, #FF9F70);
-  border-color: #FF9F70;
+  background: linear-gradient(135deg, var(--color-beige-dark), var(--color-beige));
+  color: var(--color-text);
+  border-color: var(--color-beige-dark);
+  transform: translateY(-4px) scale(1.02);
 }
 
-/* Shimmer effect */
+/* Shimmer effect plus doux et fluide */
 .btn-shimmer {
   position: absolute;
   top: 0;
@@ -302,14 +377,15 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   height: 100%;
   background: linear-gradient(
-    90deg,
+    45deg,
     transparent,
     rgba(255, 255, 255, 0.4),
     transparent
   );
-  transition: left 0.6s ease-in-out;
+  transition: left 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   z-index: 2;
   pointer-events: none;
+  border-radius: inherit;
 }
 
 .btn-custom-primary:hover .btn-shimmer,
@@ -319,29 +395,72 @@ h1, h2, h3, h4, h5, h6 {
   left: 100%;
 }
 
-/* Icon animations */
+/* Icon animations plus fluides et naturelles */
 .btn-custom-primary i,
 .btn-custom-secondary i,
 .btn-custom-accent i,
 .btn-custom-info i {
-  transition: all var(--transition-base);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   display: inline-block;
+  transform-origin: center;
 }
 
 .btn-custom-primary:hover i {
-  transform: rotate(15deg) scale(1.1);
+  transform: rotate(8deg) scale(1.15);
 }
 
 .btn-custom-secondary:hover i {
-  transform: scale(1.2);
+  transform: scale(1.2) rotateY(12deg);
 }
 
 .btn-custom-accent:hover i {
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.15) rotate(-3deg);
 }
 
 .btn-custom-info:hover i {
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.1) rotate(5deg);
+}
+
+/* Animation pour les boutons au focus */
+.btn-custom-primary:focus,
+.btn-custom-secondary:focus,
+.btn-custom-accent:focus,
+.btn-custom-info:focus {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  outline: 3px solid var(--color-accent-light);
+  outline-offset: 3px;
+}
+
+/* Animations d'entrée pour les boutons */
+@keyframes buttonFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.btn-custom-primary,
+.btn-custom-secondary,
+.btn-custom-accent,
+.btn-custom-info {
+  animation: buttonFadeIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.btn-custom-secondary {
+  animation-delay: 0.1s;
+}
+
+.btn-custom-accent {
+  animation-delay: 0.2s;
+}
+
+.btn-custom-info {
+  animation-delay: 0.3s;
 }
 
 /* Responsive adjustments */
@@ -381,58 +500,93 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Card overrides */
+/* Card overrides - animations plus fluides */
 .card {
   border: none;
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-sm);
-  transition: all var(--transition-base);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: translateY(0) scale(1);
 }
 
 .card:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow);
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Service cards - animations spéciales */
+.service-card {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: translateY(0) scale(1);
+}
+
+.service-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.service-card:hover .service-icon i {
+  transform: scale(1.1) rotate(5deg);
+  transition: all 0.3s ease;
+}
+
+/* Animation d'apparition pour les éléments */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeInUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
 /* ============================================
-   NAVIGATION STYLES
+   NAVIGATION STYLES - CORRECTION MOBILE
    ============================================ */
 
 .custom-navbar {
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 181, 167, 0.1);
+  background-color: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-bottom: 2px solid var(--color-primary);
   padding: var(--space-sm) 0;
   transition: all var(--transition-base);
+  z-index: 1050 !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .custom-navbar .container-fluid {
-  padding-left: var(--space-lg);
   padding-right: var(--space-lg);
 }
 
 .custom-navbar.scrolled {
-  background-color: rgba(255, 255, 255, 0.98);
-  box-shadow: var(--shadow-sm);
+  background-color: rgba(255, 255, 255, 0.99);
+  box-shadow: 0 2px 15px rgba(0,0,0,0.15);
 }
 
 .navbar-brand {
-  font-family: var(--font-secondary);
+  font-family: var(--font-heading);
   font-weight: var(--font-weight-bold);
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   color: var(--color-primary) !important;
   transition: all var(--transition-base);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
 .navbar-brand:hover {
   color: var(--color-primary-dark) !important;
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 .navbar-nav .nav-link {
   color: var(--color-text) !important;
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-bold);
   padding: var(--space-sm) var(--space-md) !important;
   margin: 0 var(--space-xs);
   border-radius: var(--border-radius);
@@ -444,11 +598,13 @@ h1, h2, h3, h4, h5, h6 {
 .navbar-nav .nav-link:focus {
   color: var(--color-primary) !important;
   background-color: var(--color-primary-light);
+  transform: translateY(-1px);
 }
 
 .navbar-nav .nav-link.active {
   color: var(--color-primary) !important;
   background-color: var(--color-primary-light);
+  font-weight: var(--font-weight-semibold);
 }
 
 .navbar-nav .nav-link.active::after {
@@ -457,45 +613,97 @@ h1, h2, h3, h4, h5, h6 {
   bottom: -2px;
   left: 50%;
   transform: translateX(-50%);
-  width: 20px;
-  height: 2px;
+  width: 30px;
+  height: 3px;
   background-color: var(--color-primary);
-  border-radius: 1px;
+  border-radius: 2px;
 }
 
 /* Dropdown styles */
 .dropdown-menu {
-  border: none;
-  box-shadow: var(--shadow);
+  border: 2px solid var(--color-primary-light);
+  box-shadow: var(--shadow-lg);
   border-radius: var(--border-radius);
   padding: var(--space-sm);
   background-color: var(--color-white);
+  margin-top: var(--space-xs);
 }
 
 .dropdown-item {
   padding: var(--space-sm) var(--space-md);
   border-radius: var(--border-radius-sm);
   transition: all var(--transition-fast);
+  color: var(--color-text);
 }
 
 .dropdown-item:hover,
 .dropdown-item:focus {
   background-color: var(--color-primary-light);
   color: var(--color-primary);
+  transform: translateX(3px);
 }
 
 /* Mobile menu toggle */
 .navbar-toggler {
-  border: none !important;
+  border: 2px solid var(--color-primary) !important;
   padding: var(--space-xs);
+  border-radius: var(--border-radius);
 }
 
 .navbar-toggler:focus {
-  box-shadow: none;
+  box-shadow: 0 0 0 0.2rem rgba(0, 61, 130, 0.25);
 }
 
 .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%2387CEEB' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='m4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23003D82' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='m4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Correction du padding body pour éviter que la navbar coupe le contenu */
+body {
+  padding-top: 80px;
+}
+
+/* Media queries pour mobile et tablette */
+@media (max-width: 991.98px) {
+  body {
+    padding-top: 90px;
+  }
+
+  .custom-navbar {
+    padding: var(--space-md) 0;
+  }
+
+  .navbar-brand {
+    font-size: 1.4rem;
+  }
+
+  .navbar-collapse {
+    margin-top: var(--space-md);
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: var(--border-radius);
+    padding: var(--space-md);
+    box-shadow: var(--shadow);
+  }
+
+  .navbar-nav .nav-link {
+    text-align: center;
+    margin: var(--space-xs) 0;
+    border-radius: var(--border-radius);
+  }
+}
+
+@media (max-width: 767.98px) {
+  body {
+    padding-top: 85px;
+  }
+
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  .navbar-brand img {
+    height: 35px !important;
+  }
 }
 
 /* Fix dropdown toggle highlighting issue */
@@ -572,25 +780,34 @@ h1, h2, h3, h4, h5, h6 {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding-top: 80px;
   position: relative;
   overflow: hidden;
 }
 
 .hero-section::before {
+  background-color: var(--color-beige) !important;
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2387CEEB' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23003D82' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   z-index: 1;
 }
 
 .hero-section .container {
   position: relative;
   z-index: 2;
+}
+
+/* Styles spécifiques pour le titre principal */
+.hero-section h1 {
+  font-family: var(--font-heading);
+  font-weight: normal;
+  color: var(--color-text);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  line-height: 1.1;
 }
 
 .hero-image-placeholder {
@@ -604,6 +821,112 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: center;
   box-shadow: var(--shadow);
+}
+
+/* ============================================
+   SCROLL INDICATOR ANIMATION
+   ============================================ */
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+  opacity: 0.8;
+  transition: opacity var(--transition-base);
+  cursor: pointer;
+}
+
+.scroll-indicator:hover {
+  opacity: 1;
+}
+
+.scroll-arrow {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-sm);
+  box-shadow: 0 4px 15px rgba(46, 117, 182, 0.3);
+  animation: bounceScroll 2s infinite;
+  transition: all var(--transition-base);
+}
+
+.scroll-arrow:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(46, 117, 182, 0.4);
+}
+
+.scroll-arrow i {
+  font-size: 1.5rem;
+  color: var(--color-white);
+  animation: arrowPulse 2s infinite;
+}
+
+.scroll-text {
+  color: var(--color-primary);
+  font-size: 0.9rem;
+  font-weight: var(--font-weight-medium);
+  text-align: center;
+  opacity: 0.9;
+  animation: textFade 3s infinite;
+}
+
+@keyframes bounceScroll {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-8px);
+  }
+  60% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes arrowPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes textFade {
+  0%, 100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Responsive pour l'indicateur de scroll */
+@media (max-width: 768px) {
+  .scroll-indicator {
+    bottom: 40px;
+  }
+
+  .scroll-arrow {
+    width: 50px;
+    height: 50px;
+  }
+
+  .scroll-arrow i {
+    font-size: 1.2rem;
+  }
+
+  .scroll-text {
+    font-size: 0.8rem;
+  }
 }
 
 /* ============================================
@@ -646,7 +969,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .service-card:hover .service-icon i {
-  color: var(--color-white);
+  background: var(--color-white) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: var(--color-white) !important;
+  background-clip: text !important;
+  color: var(--color-white) !important;
 }
 
 /* ============================================
@@ -676,16 +1003,16 @@ footer {
 
 footer h5 {
   color: var(--color-white);
-  font-family: var(--font-secondary);
-  font-weight: var(--font-weight-bold);
+  font-family: var(--font-heading);
+  font-weight: normal;
 }
 
 footer .text-light-50 {
-  color: rgba(255, 255, 255, 0.7) !important;
+  color: #FFFFFF !important;
 }
 
 footer a.text-light-50:hover {
-  color: var(--color-primary) !important;
+  color: #FFFFFF !important;
   transition: color var(--transition-base);
 }
 
@@ -739,14 +1066,17 @@ footer a.text-light-50:hover {
   .hero-section {
     text-align: center;
     padding-top: 100px;
+    min-height: calc(100vh - 20px);
   }
 
   .hero-section h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+    margin-bottom: var(--space-lg);
+    line-height: 1.2;
   }
 
   .display-5 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .btn-lg {
@@ -767,6 +1097,13 @@ footer a.text-light-50:hover {
 
   .service-icon i {
     font-size: 1.5rem;
+  }
+
+  /* Correction spécifique pour le texte "Bienvenue chez" */
+  .hero-section .lead {
+    font-size: 1rem;
+    margin-bottom: var(--space-lg);
+    color: var(--color-text);
   }
 }
 
@@ -877,7 +1214,7 @@ footer a.text-light-50:hover {
 }
 
 .no-photos-message .lead {
-    color: var(--color-muted);
+    color: var(--color-text);
     font-size: 1.1rem;
     line-height: 1.6;
     max-width: 600px;
@@ -916,4 +1253,591 @@ footer a.text-light-50:hover {
         width: 100%;
         margin: var(--space-xs) 0;
     }
+}
+
+/* ============================================
+   ICÔNES THÉMATIQUES ET ANIMATIONS
+   ============================================ */
+
+/* Style général pour toutes les icônes dans les titres hero */
+.hero-section h1 i {
+  display: block;
+  font-size: 3rem;
+  margin-bottom: var(--space-md);
+  text-align: center;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: iconGlow 3s ease-in-out infinite;
+  transition: all var(--transition-base);
+}
+
+.hero-section h1 i:hover {
+  transform: scale(1.1) rotate(5deg);
+  animation-duration: 1s;
+}
+
+/* Style unifié pour TOUS les emojis/icônes selon le modèle bi-globe2 display-4 */
+.bi-star,
+.bi-star,
+.bi-sun,
+.bi-sun,
+.bi-camera-video,
+.bi-heart,
+.bi-heart,
+.bi-people,
+.bi-people,
+.bi-shield-check,
+.bi-balloon-heart,
+.bi-stars,
+.bi-emoji-smile,
+.bi-lightning,
+.bi-lightbulb,
+.bi-globe2,
+.bi-check-circle,
+.bi-check-circle,
+.bi-person-badge,
+.bi-person-hearts,
+.bi-heart-pulse,
+.bi-tools,
+.bi-clock,
+.bi-body-text,
+.bi-mic,
+.bi-palette,
+.bi-book,
+.bi-people,
+.bi-chat,
+.bi-calendar-week,
+.bi-calendar3,
+.bi-house-heart,
+.bi-tree,
+.bi-building,
+.bi-trophy,
+.bi-music-note,
+.bi-camera,
+.bi-water,
+.bi-map,
+.bi-flag,
+.bi-mortarboard,
+.bi-telephone,
+.bi-envelope,
+.bi-geo-alt,
+.bi-geo-alt,
+.bi-train-front,
+.bi-calendar-event,
+.bi-mask,
+.bi-currency-euro,
+.bi-envelope-heart,
+.bi-images,
+.bi-info-circle,
+.display-4 {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  color: transparent !important;
+}
+
+/* Règles de hover spécifiques pour éviter la disparition des icônes quand le background change */
+.service-card:hover .bi-star-fill,
+.service-card:hover .bi-star,
+.service-card:hover .bi-sun-fill,
+.service-card:hover .bi-sun,
+.service-card:hover .bi-camera-video,
+.service-card:hover .bi-heart-fill,
+.service-card:hover .bi-heart,
+.service-card:hover .bi-people-fill,
+.service-card:hover .bi-people,
+.service-card:hover .bi-shield-check,
+.service-card:hover .bi-balloon-heart,
+.service-card:hover .bi-stars,
+.service-card:hover .bi-emoji-smile,
+.service-card:hover .bi-lightning,
+.service-card:hover .bi-lightbulb,
+.service-card:hover .bi-globe2,
+.service-card:hover .bi-check-circle,
+.service-card:hover .bi-person-badge,
+.service-card:hover .bi-person-hearts,
+.service-card:hover .bi-heart-pulse,
+.service-card:hover .bi-tools,
+.service-card:hover .bi-clock,
+.service-card:hover .bi-body-text,
+.service-card:hover .bi-mic,
+.service-card:hover .bi-palette,
+.service-card:hover .bi-book,
+.service-card:hover .bi-chat,
+.service-card:hover .bi-calendar-week,
+.service-card:hover .bi-calendar3,
+.service-card:hover .bi-house-heart,
+.service-card:hover .bi-tree,
+.service-card:hover .bi-building,
+.service-card:hover .bi-trophy,
+.service-card:hover .bi-music-note,
+.service-card:hover .bi-camera,
+.service-card:hover .bi-water,
+.service-card:hover .bi-map,
+.service-card:hover .bi-flag,
+.service-card:hover .bi-mortarboard,
+.service-card:hover .bi-telephone-fill,
+.service-card:hover .bi-envelope-fill,
+.service-card:hover .bi-geo-alt-fill,
+.service-card:hover .bi-geo-alt,
+.service-card:hover .bi-train-front,
+.service-card:hover .bi-calendar-event,
+.service-card:hover .bi-mask,
+.service-card:hover .bi-currency-euro,
+.service-card:hover .bi-envelope-heart {
+  background: var(--color-white) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: var(--color-white) !important;
+  background-clip: text !important;
+  color: var(--color-white) !important;
+  transition: all var(--transition-base) !important;
+}
+/* Styles spécifiques pour les icônes avec classes de couleur Bootstrap */
+.bi-trophy.text-primary,
+.bi-mask.text-primary,
+.bi-geo-alt.text-primary,
+.bi-currency-euro.text-primary,
+.bi-map.text-secondary,
+.bi-chat-dots,
+.bi-flag.text-accent,
+.bi-mortarboard.text-primary {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  color: transparent !important;
+}
+
+/* Hover spécifique pour les icônes avec classes de couleur Bootstrap */
+.bi-trophy.text-primary:hover,
+.bi-mask.text-primary:hover,
+.bi-geo-alt.text-primary:hover,
+.bi-currency-euro.text-primary:hover,
+.bi-map.text-secondary:hover,
+.bi-flag.text-accent:hover,
+.bi-mortarboard.text-primary:hover {
+  background: var(--color-white) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: var(--color-white) !important;
+  background-clip: text !important;
+  color: var(--color-white) !important;
+  transition: all var(--transition-base) !important;
+}
+
+/* Règles spéciales pour les éléments avec hover sur le parent */
+.service-card:hover .bi-trophy,
+.service-card:hover .bi-mask,
+.service-card:hover .bi-geo-alt,
+.service-card:hover .bi-currency-euro,
+.service-card:hover .bi-map,
+.service-card:hover .bi-flag,
+.service-card:hover .bi-mortarboard,
+.service-card:hover .bi-telephone-fill,
+.service-card:hover .bi-envelope-fill,
+.service-card:hover .bi-geo-alt-fill,
+.service-card:hover .bi-train-front,
+.service-card:hover .bi-water,
+.service-card:hover .bi-calendar-event,
+.service-card:hover .bi-music-note,
+.service-card:hover .bi-camera,
+.btn:hover .bi-trophy,
+.btn:hover .bi-mask,
+.btn:hover .bi-geo-alt,
+.btn:hover .bi-currency-euro,
+.btn:hover .bi-map,
+.btn:hover .bi-flag,
+.btn:hover .bi-mortarboard,
+.btn:hover .bi-telephone-fill,
+.btn:hover .bi-envelope-fill,
+.btn:hover .bi-geo-alt-fill,
+.btn:hover .bi-train-front,
+.btn:hover .bi-water,
+.btn:hover .bi-calendar-event,
+.btn:hover .bi-music-note,
+.btn:hover .bi-camera {
+  background: var(--color-white) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: var(--color-white) !important;
+  background-clip: text !important;
+  color: var(--color-white) !important;
+}
+
+
+/* Icônes de service avec animations spéciales */
+.service-icon i {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform-origin: center;
+}
+
+.service-icon .bi-sun-fill {
+  animation: sunRotate 4s linear infinite;
+}
+
+.service-icon .bi-camera-video {
+  animation: cameraShake 2s ease-in-out infinite;
+}
+
+.service-icon .bi-heart-fill {
+  animation: heartBeat 1.5s ease-in-out infinite;
+}
+
+.service-icon .bi-people-fill {
+  animation: peopleWave 3s ease-in-out infinite;
+}
+
+.service-icon .bi-shield-check {
+  animation: shieldPulse 2.5s ease-in-out infinite;
+}
+
+.service-icon .bi-star-fill {
+  animation: starTwinkle 2s ease-in-out infinite;
+}
+
+.service-icon .bi-balloon-heart {
+  animation: heartBeat 1.5s ease-in-out infinite;
+}
+
+.service-icon .bi-stars {
+  animation: starTwinkle 2s ease-in-out infinite;
+}
+
+.service-icon .bi-emoji-smile {
+  animation: smileBounce 2s ease-in-out infinite;
+}
+
+.service-icon .bi-lightning {
+  animation: lightningFlash 1.5s ease-in-out infinite;
+}
+
+/* Animations personnalisées pour chaque icône */
+@keyframes iconGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px rgba(46, 117, 182, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(46, 117, 182, 0.6));
+  }
+}
+
+@keyframes sunRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes cameraShake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-2px);
+  }
+  75% {
+    transform: translateX(2px);
+  }
+}
+
+@keyframes heartBeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes peopleWave {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-3deg);
+  }
+  75% {
+    transform: rotate(3deg);
+  }
+}
+
+@keyframes shieldPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+@keyframes starTwinkle {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2) rotate(180deg);
+    opacity: 0.7;
+  }
+}
+
+@keyframes smileBounce {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-3px) scale(1.05);
+  }
+}
+
+@keyframes lightningFlash {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+}
+
+/* Icônes dans les cartes avec hover effects */
+.card .bi-check-circle-fill {
+  color: var(--color-success) !important;
+  transition: all var(--transition-base);
+}
+
+.card:hover .bi-check-circle-fill {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 5px rgba(34, 139, 34, 0.5));
+}
+
+/* Icônes dans la navigation et footer */
+.navbar .bi,
+footer .bi {
+  color: var(--color-primary) !important;
+  transition: all var(--transition-base);
+}
+
+.navbar .bi:hover,
+footer .bi:hover {
+  transform: scale(1.1);
+  color: var(--color-secondary) !important;
+}
+
+/* Responsive pour les icônes */
+@media (max-width: 768px) {
+  .hero-section h1 i {
+    font-size: 2.5rem;
+    margin-right: var(--space-sm);
+    margin-bottom: var(--space-sm);
+    display: block;
+    text-align: center;
+  }
+
+  .service-icon i {
+    font-size: 1.8rem;
+  }
+}
+
+/* Icônes spéciales pour les boutons */
+.btn i {
+  transition: all var(--transition-base);
+}
+
+.btn:hover i {
+  transform: translateX(2px);
+}
+
+.btn-custom-primary:hover i,
+.btn-custom-secondary:hover i,
+.btn-custom-accent:hover i,
+.btn-custom-info:hover i {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* ============================================
+   ALTERNANCE DES SECTIONS (BLANC/BEIGE)
+   ============================================ */
+
+/* Assurer une alternance claire entre les sections */
+.py-5:nth-child(even) {
+  background-color: var(--color-beige) !important;
+}
+
+.py-5:nth-child(odd) {
+  background-color: var(--color-background) !important;
+}
+
+/* Override pour les sections avec bg-light existantes */
+.bg-light {
+  background-color: var(--color-beige) !important;
+}
+
+/* ============================================
+   AMÉLIORATIONS VISUELLES
+   ============================================ */
+
+/* Amélioration des cartes avec gradient subtil */
+.card {
+  background: linear-gradient(145deg, var(--color-white) 0%, rgba(245, 230, 211, 0.1) 100%);
+  border: 1px solid rgba(46, 117, 182, 0.1);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card:hover {
+  background: linear-gradient(145deg, var(--color-white) 0%, rgba(245, 230, 211, 0.2) 100%);
+  border-color: var(--color-primary);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(46, 117, 182, 0.15);
+}
+
+/* Amélioration des boutons avec effets plus fluides */
+.btn-primary, .btn-outline-primary {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.btn-primary::before, .btn-outline-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-primary:hover::before, .btn-outline-primary:hover::before {
+  left: 100%;
+}
+
+/* Amélioration des icônes de service */
+.service-icon {
+  position: relative;
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-beige));
+  box-shadow: 0 8px 16px rgba(46, 117, 182, 0.1);
+}
+
+.service-icon::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.service-card:hover .service-icon::after {
+  opacity: 1;
+}
+
+/* Amélioration des titres avec effet de texte */
+h1, h2 {
+  position: relative;
+  z-index: 1;
+}
+
+.display-4, .display-5 {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+  from {
+    text-shadow: 0 0 10px rgba(46, 117, 182, 0.3);
+  }
+  to {
+    text-shadow: 0 0 20px rgba(46, 117, 182, 0.6), 0 0 30px rgba(255, 107, 53, 0.3);
+  }
+}
+
+/* Amélioration des liens avec transition douce */
+a {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Amélioration de la navbar avec effet glassmorphism */
+.custom-navbar {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(46, 117, 182, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Amélioration du footer */
+footer {
+  background: linear-gradient(135deg, var(--color-dark) 0%, #1a1a1a 100%) !important;
+}
+
+/* Amélioration des sections avec pattern subtil */
+.hero-section::before {
+  background-image:
+    radial-gradient(circle at 25px 25px, rgba(46, 117, 182, 0.1) 2px, transparent 0),
+    radial-gradient(circle at 75px 75px, rgba(255, 107, 53, 0.1) 2px, transparent 0);
+  background-size: 100px 100px;
+}
+
+/* Animation pour les éléments au scroll */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Délais d'animation pour effet cascade */
+.fade-in:nth-child(1) { animation-delay: 0.1s; }
+.fade-in:nth-child(2) { animation-delay: 0.2s; }
+.fade-in:nth-child(3) { animation-delay: 0.3s; }
+.fade-in:nth-child(4) { animation-delay: 0.4s; }
+.fade-in:nth-child(5) { animation-delay: 0.5s; }
+
+/* ============================================
+   LIST STYLES - Check Circle Icons
+   ============================================ */
+
+/* Léger décalage à droite pour les listes avec des icônes de validation */
+li:has(.bi-check-circle-fill),
+li:has(.bi-check-circle) {
+  padding-left: 1rem;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  li:has(.bi-check-circle-fill),
+  li:has(.bi-check-circle) {
+    padding-left: 0.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  li:has(.bi-check-circle-fill),
+  li:has(.bi-check-circle) {
+    padding-left: 0.5rem;
+  }
 }

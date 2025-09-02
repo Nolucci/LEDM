@@ -10,7 +10,7 @@
 }
 
 .document-category__title {
-  color: var(--color-heading);
+  color: var(--color-text);
   margin-bottom: var(--space-md);
   padding-bottom: var(--space-xs);
   border-bottom: 2px solid var(--color-primary);
@@ -72,7 +72,7 @@
   gap: var(--space-xs);
   padding: var(--space-xs) var(--space-sm);
   background-color: var(--color-secondary);
-  color: var(--color-text);
+  color: var(--color-white);
   border-radius: var(--border-radius-sm);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
@@ -109,11 +109,13 @@
 .document-filter:hover {
   background-color: var(--color-primary);
   border-color: var(--color-primary);
+  color: var(--color-white);
 }
 
 .document-filter.active {
   background-color: var(--color-primary);
   border-color: var(--color-primary);
+  color: var(--color-white);
   font-weight: var(--font-weight-medium);
 }
 

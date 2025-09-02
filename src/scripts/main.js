@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', function() {
     Navigation.init();
     ScrollEffects.init();
     AnimationObserver.init();
+    ScrollIndicator.init();
+    IconAnimations.init();
 });
 
 /**
@@ -31,14 +33,12 @@ const Navigation = {
 
         window.addEventListener('scroll', () => {
             const currentScrollY = window.scrollY;
-
             // Add scrolled class for styling
             if (currentScrollY > 50) {
                 navbar.classList.add('scrolled');
             } else {
                 navbar.classList.remove('scrolled');
             }
-
             lastScrollY = currentScrollY;
         });
     },
@@ -137,7 +137,7 @@ const ScrollEffects = {
                 const targetElement = document.getElementById(targetId);
 
                 if (targetElement) {
-                    const offsetTop = targetElement.offsetTop - 80; // Account for fixed navbar
+                    const offsetTop = targetElement.offsetTop - 100; // Account for fixed navbar
 
                     window.scrollTo({
                         top: offsetTop,
@@ -152,40 +152,29 @@ const ScrollEffects = {
         // Create scroll to top button
         const scrollToTopBtn = document.createElement('button');
         scrollToTopBtn.innerHTML = '<i class="bi bi-arrow-up"></i>';
-        scrollToTopBtn.className = 'btn btn-primary scroll-to-top';
+        scrollToTopBtn.className = 'btn btn-primary scroll-to-top-btn';
         scrollToTopBtn.setAttribute('aria-label', 'Retour en haut');
-        scrollToTopBtn.style.cssText = `
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            z-index: 1000;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: none;
-            opacity: 0;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        `;
+        scrollToTopBtn.id = 'scrollToTopBtn';
 
         document.body.appendChild(scrollToTopBtn);
 
-        // Show/hide scroll to top button
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                scrollToTopBtn.style.display = 'flex';
-                scrollToTopBtn.style.alignItems = 'center';
-                scrollToTopBtn.style.justifyContent = 'center';
-                setTimeout(() => {
-                    scrollToTopBtn.style.opacity = '1';
-                }, 10);
-            } else {
-                scrollToTopBtn.style.opacity = '0';
-                setTimeout(() => {
-                    scrollToTopBtn.style.display = 'none';
-                }, 300);
+        let isVisible = false;
+
+        // Show/hide scroll to top button with better logic
+        const toggleButton = () => {
+            const shouldShow = window.scrollY > 300;
+
+            if (shouldShow && !isVisible) {
+                scrollToTopBtn.classList.add('visible');
+                isVisible = true;
+            } else if (!shouldShow && isVisible) {
+                scrollToTopBtn.classList.remove('visible');
+                isVisible = false;
             }
-        });
+        };
+
+        // Use throttled scroll for better performance
+        window.addEventListener('scroll', Utils.throttle(toggleButton, 100));
 
         // Scroll to top functionality
         scrollToTopBtn.addEventListener('click', () => {
@@ -194,6 +183,9 @@ const ScrollEffects = {
                 behavior: 'smooth'
             });
         });
+
+        // Initialize button state
+        toggleButton();
     }
 };
 
@@ -244,6 +236,126 @@ const AnimationObserver = {
             card.addEventListener('mouseleave', () => {
                 card.style.transform = 'translateY(0) scale(1)';
             });
+        });
+    }
+};
+
+/**
+ * Scroll Indicator Component
+ * Handles the scroll indicator animation in hero section
+ */
+const ScrollIndicator = {
+    init() {
+        this.setupScrollIndicator();
+    },
+
+    setupScrollIndicator() {
+        const scrollIndicator = document.querySelector('.scroll-indicator');
+
+        if (scrollIndicator) {
+            // Add click event to scroll to next section
+            scrollIndicator.addEventListener('click', function() {
+                const nextSection = document.querySelector('.hero-section').nextElementSibling;
+                if (nextSection) {
+                    nextSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+
+            // Hide/show scroll indicator based on scroll position
+            window.addEventListener('scroll', Utils.throttle(() => {
+                const heroSection = document.querySelector('.hero-section');
+                if (heroSection) {
+                    const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+                    const scrolled = window.pageYOffset;
+
+                    if (scrolled > heroBottom - 200) {
+                        scrollIndicator.style.opacity = '0';
+                        scrollIndicator.style.pointerEvents = 'none';
+                    } else {
+                        scrollIndicator.style.opacity = '0.8';
+                        scrollIndicator.style.pointerEvents = 'auto';
+                    }
+                }
+            }, 100));
+        }
+    }
+};
+
+/**
+ * Icon Animations Component
+ * Enhanced animations for icons with theme-based effects
+ */
+const IconAnimations = {
+    init() {
+        this.setupServiceCardIcons();
+        this.setupHeroIcons();
+        this.setupButtonIcons();
+        this.setupCheckIcons();
+    },
+
+    setupServiceCardIcons() {
+        const serviceCards = document.querySelectorAll('.service-card');
+        serviceCards.forEach(card => {
+            const icon = card.querySelector('.service-icon i');
+            if (icon) {
+                card.addEventListener('mouseenter', function() {
+                    icon.style.animationDuration = '0.5s';
+                });
+
+                card.addEventListener('mouseleave', function() {
+                    icon.style.animationDuration = '';
+                });
+            }
+        });
+    },
+
+    setupHeroIcons() {
+        const heroIcons = document.querySelectorAll('.hero-section h1 i');
+        heroIcons.forEach(icon => {
+            icon.addEventListener('mouseenter', function() {
+                this.style.animationPlayState = 'paused';
+                this.style.transform = 'scale(1.1) rotate(5deg)';
+            });
+
+            icon.addEventListener('mouseleave', function() {
+                this.style.animationPlayState = 'running';
+                this.style.transform = '';
+            });
+        });
+    },
+
+    setupButtonIcons() {
+        const buttonsWithIcons = document.querySelectorAll('.btn i');
+        buttonsWithIcons.forEach(icon => {
+            icon.parentElement.addEventListener('click', function() {
+                icon.style.transform = 'scale(1.2) rotate(360deg)';
+                setTimeout(() => {
+                    icon.style.transform = '';
+                }, 600);
+            });
+        });
+    },
+
+    setupCheckIcons() {
+        const checkIcons = document.querySelectorAll('.bi-check-circle-fill');
+        checkIcons.forEach(icon => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            icon.style.transform = 'scale(1.2)';
+                            setTimeout(() => {
+                                icon.style.transform = 'scale(1)';
+                            }, 200);
+                        }, Math.random() * 500);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            observer.observe(icon);
         });
     }
 };
@@ -384,6 +496,8 @@ if (typeof module !== 'undefined' && module.exports) {
         Navigation,
         ScrollEffects,
         AnimationObserver,
+        ScrollIndicator,
+        IconAnimations,
         FormUtils,
         Utils
     };
@@ -391,13 +505,56 @@ if (typeof module !== 'undefined' && module.exports) {
 
 // Add CSS for scroll-to-top button and animations
 const additionalStyles = `
-    .scroll-to-top {
-        animation: fadeInUp 0.3s ease;
+    .scroll-to-top-btn {
+        position: fixed !important;
+        bottom: 2rem;
+        right: 2rem;
+        z-index: 1070 !important;
+        width: 60px;
+        height: 60px;
+        border-radius: 50% !important;
+        border: 2px solid var(--color-primary) !important;
+        background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark)) !important;
+        color: var(--color-white) !important;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        box-shadow: 0 8px 25px rgba(46, 117, 182, 0.4);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(20px) scale(0.8);
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        cursor: pointer;
+        font-weight: bold;
     }
 
-    .scroll-to-top:hover {
+    .scroll-to-top-btn:hover {
+        background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary)) !important;
+        color: var(--color-white) !important;
+        transform: translateY(-4px) scale(1.1);
+        box-shadow: 0 12px 35px rgba(46, 117, 182, 0.6);
+        border-color: var(--color-primary-dark) !important;
+    }
+
+    .scroll-to-top-btn:focus {
+        outline: 3px solid var(--color-accent-light);
+        outline-offset: 3px;
+        box-shadow: 0 0 0 3px rgba(244, 197, 66, 0.3);
+    }
+
+    .scroll-to-top-btn.visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0) scale(1);
+    }
+
+    .scroll-to-top-btn i {
+        transition: transform 0.3s ease;
+    }
+
+    .scroll-to-top-btn:hover i {
         transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(0,0,0,0.2);
     }
 
     @keyframes fadeInUp {
@@ -427,6 +584,17 @@ const additionalStyles = `
         padding: 0.75rem 1rem;
         margin-bottom: 0;
         border-radius: 0.375rem;
+    }
+
+    /* Media queries pour le bouton responsive */
+    @media (max-width: 768px) {
+        .scroll-to-top-btn {
+            width: 50px;
+            height: 50px;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            font-size: 1rem;
+        }
     }
 `;
 

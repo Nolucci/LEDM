@@ -30,7 +30,7 @@
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../src/styles/main.css">
 </head>
@@ -84,7 +84,7 @@
             <div class="row align-items-center min-vh-100">
                 <div class="col-lg-6">
                     <h1 class="display-4 fw-bold text-primary mb-4">
-                        Bienvenue chez Les Enfants des Mousquetaires
+                         Les Enfants des Mousquetaires
                     </h1>
                     <p class="lead mb-4">
                         Découvrez nos colonies de vacances inclusives et nos ateliers théâtre dans une ambiance familiale et bienveillante.
@@ -92,21 +92,21 @@
                     </p>
                     <div class="hero-buttons-container mb-4">
                         <div class="d-flex flex-wrap justify-content-center gap-3 mb-3">
-                            <a href="../src/pages/colonies.html" class="btn btn-custom-primary btn-lg">
-                                <i class="bi bi-sun me-2"></i>Nos Colonies
+                            <a href="../src/pages/colonies.html" class="btn-custom-primary">
+                                <i class="bi bi-sun-fill me-2"></i>Nos Colonies
                                 <span class="btn-shimmer"></span>
                             </a>
-                            <a href="../src/pages/theatre.html" class="btn btn-custom-secondary btn-lg">
-                                <i class="bi bi-camera-video me-2"></i>Ateliers Théâtre
+                            <a href="../src/pages/theatre.html" class="btn-custom-secondary">
+                                <i class="bi bi-camera-video-fill me-2"></i>Ateliers Théâtre
                                 <span class="btn-shimmer"></span>
                             </a>
                         </div>
                         <div class="d-flex flex-wrap justify-content-center gap-3 mb-3">
-                            <a href="../src/assets/documents/DEPLIANT%201.pdf" class="btn btn-custom-accent btn-lg" download>
+                            <a href="../src/assets/documents/DEPLIANT%201.pdf" class="btn-custom-info" download>
                                 <i class="bi bi-download me-2"></i>Brochure 1
                                 <span class="btn-shimmer"></span>
                             </a>
-                            <a href="../src/assets/documents/DEPLIANT%202.pdf" class="btn btn-custom-info btn-lg" download>
+                            <a href="../src/assets/documents/DEPLIANT%202.pdf" class="btn-custom-info" download>
                                 <i class="bi bi-download me-2"></i>Brochure 2
                                 <span class="btn-shimmer"></span>
                             </a>
@@ -120,6 +120,14 @@
                 </div>
             </div>
         </div>
+
+        <!-- Scroll Animation -->
+        <div class="scroll-indicator">
+            <div class="scroll-arrow">
+                <i class="bi bi-chevron-down"></i>
+            </div>
+            <span class="scroll-text">Découvrez nos services</span>
+        </div>
     </section>
 
     <!-- Services Section -->
@@ -127,7 +135,7 @@
         <div class="container">
             <div class="row text-center mb-5">
                 <div class="col-lg-8 mx-auto">
-                    <h2 class="display-5 fw-bold text-primary mb-3">Nos Services</h2>
+                    <h1 class="display-5 fw-bold text-primary mb-3">Nos Services</h1>
                     <p class="lead text-muted">
                         Une approche inclusive et familiale pour des vacances et des activités enrichissantes
                     </p>
@@ -139,9 +147,9 @@
                     <div class="card h-100 border-0 shadow-sm service-card">
                         <div class="card-body text-center p-4">
                             <div class="service-icon mb-3">
-                                <i class="bi bi-sun-fill"></i>
+                                <i class="bi bi-sun"></i>
                             </div>
-                            <h5 class="card-title fw-bold">Colonies de Vacances</h5>
+                            <h1 class="card-title fw-bold">Colonies de Vacances</h1>
                             <p class="card-text">
                                 Séjours inclusifs pour enfants et adolescents avec des activités variées
                                 dans une ambiance familiale et des petits effectifs.
@@ -157,7 +165,7 @@
                             <div class="service-icon mb-3">
                                 <i class="bi bi-camera-video"></i>
                             </div>
-                            <h5 class="card-title fw-bold">Ateliers Théâtre</h5>
+                            <h1 class="card-title fw-bold">Ateliers Théâtre</h1>
                             <p class="card-text">
                                 Création de spectacles pour tous les âges : enfants, adolescents et adultes.
                                 Développez votre créativité et votre confiance en soi.
@@ -171,9 +179,9 @@
                     <div class="card h-100 border-0 shadow-sm service-card">
                         <div class="card-body text-center p-4">
                             <div class="service-icon mb-3">
-                                <i class="bi bi-heart-fill"></i>
+                                <i class="bi bi-heart"></i>
                             </div>
-                            <h5 class="card-title fw-bold">Approche Inclusive</h5>
+                            <h1 class="card-title fw-bold">Approche Inclusive</h1>
                             <p class="card-text">
                                 Accueil social et familial pour tous. Nous croyons que chaque enfant
                                 mérite de vivre des vacances enrichissantes et joyeuses.
@@ -197,7 +205,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <h2 class="display-5 fw-bold text-primary mb-4">Une Association Familiale</h2>
+                    <h1 class="display-5 fw-bold text-primary mb-4 text-center">Une Association Familiale</h1>
                     <p class="lead mb-4">
                         Basée à Béziers, notre association promeut l'inclusion sociale et offre des expériences
                         enrichissantes à tous les enfants, quelles que soient leurs origines.
@@ -220,7 +228,9 @@
                             <span>Approche inclusive et sociale</span>
                         </li>
                     </ul>
-                    <a href="../src/pages/association.html" class="btn btn-primary">Découvrir l'Association</a>
+                    <div class="d-flex flex-wrap gap-3 justify-content-center">
+                        <a href="../src/pages/association.html" class="btn btn-outline-primary btn-lg">Découvrir l'Association</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -231,19 +241,18 @@
         <div class="container text-center">
             <div class="row">
                 <div class="col-lg-8 mx-auto">
-                    <h2 class="display-5 fw-bold mb-4">Prêt à Nous Rejoindre ?</h2>
+                    <h1 class="display-5 fw-bold mb-4">Prêt à Nous Rejoindre ?</h1>
                     <p class="lead mb-4">
                         Contactez-nous pour plus d'informations sur nos colonies de vacances
                         et nos ateliers théâtre. Nous serons ravis de vous accueillir !
                     </p>
                     <div class="d-flex flex-wrap justify-content-center gap-2">
-                        <a href="../src/pages/contact.html" class="btn btn-light btn-lg">
+                        <a href="../src/pages/contact.html" class="btn btn-outline-primary btn-lg">
                             <i class="bi bi-telephone me-2"></i>Nous Contacter
                         </a>
-                        <a href="../src/pages/photos.html" class="btn btn-outline-light btn-lg">
+                        <a href="../src/pages/photos.html" class="btn btn-outline-primary btn-lg">
                             <i class="bi bi-images me-2"></i>Voir nos Photos
                         </a>
-
                     </div>
                 </div>
             </div>
@@ -254,16 +263,16 @@
     <footer class="bg-dark text-light py-5">
         <div class="container">
             <div class="row g-4 text-center text-lg-start">
-                <div class="col-lg-4">
-                    <h5 class="fw-bold mb-3">Les Enfants des Mousquetaires</h5>
+                <div class="col-lg-4 text-center text-white">
+                    <h1 class="fw-bold mb-3 text-center text-white">Les Enfants des Mousquetaires</h1>
                     <p class="text-light-50">
                         Association de colonies de vacances inclusives et d'ateliers théâtre
                         basée à Béziers, offrant une approche familiale et bienveillante.
                     </p>
                 </div>
 
-                <div class="col-lg-4">
-                    <h5 class="fw-bold mb-3">Contact</h5>
+                <div class="col-lg-4 text-center text-white">
+                    <h1 class="fw-bold mb-3text-center text-white">Contact</h1>
                     <ul class="list-unstyled">
                         <li class="mb-2">
                             <i class="bi bi-geo-alt me-2"></i>Béziers, France
@@ -277,8 +286,8 @@
                     </ul>
                 </div>
 
-                <div class="col-lg-4">
-                    <h5 class="fw-bold mb-3">Liens Rapides</h5>
+                <div class="col-lg-4 text-center text-white">
+                    <h1 class="fw-bold mb-3 text-center text-white">Liens Rapides</h1>
                     <ul class="list-unstyled">
                         <li><a href="../../index.html" class="text-light-50 text-decoration-none">Accueil</a></li>
                         <li><a href="../src/pages/association.html" class="text-light-50 text-decoration-none">L'Association</a></li>

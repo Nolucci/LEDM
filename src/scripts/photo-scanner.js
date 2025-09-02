@@ -142,7 +142,7 @@ class PhotoScanner {
                         </div>
                     </a>
                     <div class="gallery-info p-3">
-                        <h6 class="fw-bold mb-1">${image.title}</h6>
+                        <h3 class="fw-bold mb-1">${image.title}</h3>
                     </div>
                 </div>
             </div>
@@ -224,14 +224,6 @@ class PhotoScanner {
                         Nous n'avons pas encore ajouté de photos dans cette section.
                         <br>Revenez bientôt pour découvrir nos nouveaux souvenirs !
                     </p>
-                    <div class="d-flex flex-wrap justify-content-center gap-3">
-                        <a href="contact.html" class="btn btn-primary">
-                            <i class="bi bi-telephone me-2"></i>Nous Contacter
-                        </a>
-                        <a href="../../public/index.html" class="btn btn-outline-primary">
-                            <i class="bi bi-house me-2"></i>Retour à l'accueil
-                        </a>
-                    </div>
                 </div>
             </div>
         `;
