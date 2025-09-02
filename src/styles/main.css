@@ -38,6 +38,21 @@
   --color-muted: #000000;          /* Noir pur pour meilleure lisibilité */
   --color-dark: #2c2c2c;           /* Fond sombre pour texte blanc */
 
+/* Responsive Navbar Brand Text */
+.navbar-fullname {
+  display: inline;
+}
+.navbar-shortname {
+  display: none;
+}
+@media (max-width: 576px) {
+  .navbar-fullname {
+    display: none;
+  }
+  .navbar-shortname {
+    display: inline;
+  }
+}
   /* Status colors with better contrast */
   --color-success: #228B22;
   --color-warning: #B8860B;
@@ -691,6 +706,11 @@ body {
     margin: var(--space-xs) 0;
     border-radius: var(--border-radius);
   }
+  /* Place burger menu to the right on mobile */
+  .custom-navbar .navbar-toggler {
+    margin-left: auto;
+    display: block;
+  }
 }
 
 @media (max-width: 767.98px) {
@@ -698,9 +718,6 @@ body {
     padding-top: 85px;
   }
 
-  .navbar-brand {
-    font-size: 1.2rem;
-  }
 
   .navbar-brand img {
     height: 35px !important;
@@ -1839,5 +1856,10 @@ li:has(.bi-check-circle) {
   li:has(.bi-check-circle-fill),
   li:has(.bi-check-circle) {
     padding-left: 0.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .scroll-indicator {
+    display: none !important;
   }
 }
