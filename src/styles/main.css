@@ -599,6 +599,7 @@ h3, h4, h5, h6 {
   color: var(--color-primary) !important;
   background-color: var(--color-primary-light);
   transform: translateY(-1px);
+  text;
 }
 
 .navbar-nav .nav-link.active {
