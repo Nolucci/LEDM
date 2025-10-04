@@ -57,19 +57,19 @@ function generateAllIndexes() {
 
   const directories = [
     {
-      name: 'Activite',
-      path: path.join(photosBaseDir, 'Activite'),
-      indexPath: path.join(photosBaseDir, 'Activite', 'index.json')
+      name: 'Activités',
+      path: path.join(photosBaseDir, 'activites'),
+      indexPath: path.join(photosBaseDir, 'activites', 'index.json')
     },
     {
-      name: 'Colonie',
-      path: path.join(photosBaseDir, 'Colonie'),
-      indexPath: path.join(photosBaseDir, 'Colonie', 'index.json')
+      name: 'Colonies',
+      path: path.join(photosBaseDir, 'colonies'),
+      indexPath: path.join(photosBaseDir, 'colonies', 'index.json')
     },
     {
-      name: 'Theatre',
-      path: path.join(photosBaseDir, 'Theatre'),
-      indexPath: path.join(photosBaseDir, 'Theatre', 'index.json')
+      name: 'Théâtre',
+      path: path.join(photosBaseDir, 'theatre'),
+      indexPath: path.join(photosBaseDir, 'theatre', 'index.json')
     }
   ];
 

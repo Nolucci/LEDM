@@ -62,31 +62,35 @@ class PhotoScanner {
      */
     async scanFolder(folder) {
         const images = [];
-        let counter = 1;
-        let notFoundCount = 0;
-        const maxNotFound = 2; // Arrêter après 2 images non trouvées consécutives
+        const indexUrl = `${this.basePath}${folder.name}/index.json`;
 
-        while (notFoundCount < maxNotFound) {
-            const imagePath = await this.findImageParallel(folder, counter);
-
-            if (imagePath) {
+        try {
+            const response = await fetch(indexUrl);
+            if (!response.ok) {
+                console.warn(`Impossible de charger ${indexUrl}`);
+                return;
+            }
+            const data = await response.json();
+            if (!Array.isArray(data.images)) {
+                console.warn(`Format index.json invalide pour ${folder.name}`);
+                return;
+            }
+            data.images.forEach((fileName, idx) => {
+                const imagePath = `${this.basePath}${folder.name}/${fileName}`;
                 images.push({
                     path: imagePath,
-                    title: `${folder.displayName} ${counter}`,
+                    title: `${folder.displayName} ${idx + 1}`,
                     category: folder.category,
-                    number: counter
+                    number: idx + 1
                 });
-                notFoundCount = 0;
-            } else {
-                notFoundCount++;
-            }
-
-            counter++;
+            });
+        } catch (e) {
+            console.warn(`Erreur lors du chargement de ${indexUrl}:`, e);
         }
 
         this.allImages.push(...images);
 
-        console.log(`Dossier ${folder.name}: ${images.length} images trouvées`);
+        console.log(`Dossier ${folder.name}: ${images.length} images chargées depuis index.json`);
     }
 
     /**
