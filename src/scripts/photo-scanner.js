@@ -64,10 +64,10 @@ class PhotoScanner {
         const images = [];
         let counter = 1;
         let notFoundCount = 0;
-        const maxNotFound = 3; // Arrêter après 3 images non trouvées consécutives
+        const maxNotFound = 2; // Arrêter après 2 images non trouvées consécutives
 
         while (notFoundCount < maxNotFound) {
-            const imagePath = await this.findImage(folder, counter);
+            const imagePath = await this.findImageParallel(folder, counter);
 
             if (imagePath) {
                 images.push({
@@ -76,7 +76,7 @@ class PhotoScanner {
                     category: folder.category,
                     number: counter
                 });
-                notFoundCount = 0; // Reset du compteur si image trouvée
+                notFoundCount = 0;
             } else {
                 notFoundCount++;
             }
@@ -84,7 +84,6 @@ class PhotoScanner {
             counter++;
         }
 
-        // Ajouter les images à la liste globale au lieu de les afficher directement
         this.allImages.push(...images);
 
         console.log(`Dossier ${folder.name}: ${images.length} images trouvées`);
@@ -93,19 +92,14 @@ class PhotoScanner {
     /**
      * Cherche une image avec le pattern spécifique
      */
-    async findImage(folder, number) {
-        // Chercher uniquement avec le format exact : "Nom espace numéro"
+    async findImageParallel(folder, number) {
         const baseName = `${folder.searchName} ${number}`;
-
-        for (const ext of this.imageExtensions) {
+        const checks = this.imageExtensions.map(ext => {
             const imagePath = `${this.basePath}${folder.name}/${baseName}.${ext}`;
-
-            if (await this.imageExists(imagePath)) {
-                return imagePath;
-            }
-        }
-
-        return null;
+            return this.imageExists(imagePath).then(exists => exists ? imagePath : null);
+        });
+        const results = await Promise.all(checks);
+        return results.find(path => path !== null) || null;
     }
 
     /**
