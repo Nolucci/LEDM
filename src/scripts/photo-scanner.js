@@ -141,9 +141,6 @@ class PhotoScanner {
                             </div>
                         </div>
                     </a>
-                    <div class="gallery-info p-3">
-                        <h3 class="fw-bold mb-1">${image.title}</h3>
-                    </div>
                 </div>
             </div>
         `;
