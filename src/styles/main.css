@@ -14,23 +14,30 @@
 
 /* CSS Custom Properties (Design Tokens) */
 :root {
-  /* Colors - Thème Bleu/Orange/Jaune/Beige */
-  --color-primary: #2E75B6;        /* Bleu océan profond */
-  --color-secondary: #FF6B35;      /* Orange vif et chaleureux */
-  --color-accent: #F4C542;         /* Jaune solaire */
-  --color-beige: #F5E6D3;          /* Beige doux */
-  --color-text: #000000;           /* Noir pur pour contraste maximal */
+  /* Colors - Thème Vacances Vibrant 🌴☀️🌊 */
+  --color-primary: #00A8E8;        /* Bleu océan tropical éclatant */
+  --color-secondary: #FF6B6B;      /* Corail vif et joyeux */
+  --color-accent: #FFD93D;         /* Jaune soleil lumineux */
+  --color-beige: #FFF8E7;          /* Crème vanille */
+  --color-text: #2D3436;           /* Gris anthracite doux */
   --color-background: #FFFFFF;     /* Blanc pur */
 
-  /* Extended color palette */
-  --color-primary-dark: #1B4A73;
-  --color-primary-light: #E8F1FA;
-  --color-secondary-dark: #CC4A1A;
-  --color-secondary-light: #FFE8E1;
-  --color-accent-dark: #D4A315;
-  --color-accent-light: #FDF5D6;
-  --color-beige-dark: #c1aa8b;
-  --color-beige-light: #e7d1b9;
+  /* Extended color palette - Palette vacances enrichie */
+  --color-primary-dark: #007BB5;
+  --color-primary-light: #B3E5FC;
+  --color-secondary-dark: #EE5A52;
+  --color-secondary-light: #FFE0DD;
+  --color-accent-dark: #FFC107;
+  --color-accent-light: #FFF9C4;
+  --color-beige-dark: #FFE4B5;
+  --color-beige-light: #FFFAF0;
+
+  /* Nouvelles couleurs vacances */
+  --color-turquoise: #06D6A0;      /* Turquoise lagon */
+  --color-purple: #B565D8;          /* Violet crépuscule */
+  --color-orange: #FF8C42;          /* Orange cocktail */
+  --color-pink: #FF6FB5;            /* Rose flamant */
+  --color-lime: #90E39A;            /* Vert lime rafraîchissant */
 
   /* Neutral colors */
   --color-white: #FFFFFF;
@@ -342,40 +349,42 @@ h3, h4, h5, h6 {
   box-shadow: var(--shadow-lg);
 }
 
-/* Primary button - Bleu océan */
+/* Primary button - Bleu océan tropical */
 .btn-custom-primary {
-  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
-  border-color: var(--color-primary-dark);
+  background: linear-gradient(135deg, #00A8E8 0%, #06D6A0 100%);
+  border: 3px solid #FFFFFF;
   color: var(--color-white);
   transform: translateY(0) scale(1);
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  box-shadow: 0 4px 15px rgba(46, 117, 182, 0.3);
+  box-shadow: 0 8px 25px rgba(0, 168, 232, 0.5), inset 0 -3px 10px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .btn-custom-primary:hover {
-  background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
-  border-color: var(--color-primary);
+  background: linear-gradient(135deg, #06D6A0 0%, #00A8E8 100%);
+  border-color: #FFD93D;
   color: var(--color-white);
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 8px 25px rgba(46, 117, 182, 0.4);
+  transform: translateY(-6px) scale(1.05) rotate(-1deg);
+  box-shadow: 0 12px 35px rgba(6, 214, 160, 0.6), inset 0 -3px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Secondary button - Orange chaleureux */
+/* Secondary button - Corail vibrant */
 .btn-custom-secondary {
-  background: linear-gradient(135deg, var(--color-secondary), var(--color-secondary-dark));
+  background: linear-gradient(135deg, #FF6B6B 0%, #FF8C42 100%);
+  border: 3px solid #FFFFFF;
   color: var(--color-white);
-  border-color: var(--color-secondary-dark);
   transform: translateY(0) scale(1);
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+  box-shadow: 0 8px 25px rgba(255, 107, 107, 0.5), inset 0 -3px 10px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .btn-custom-secondary:hover {
-  background: linear-gradient(135deg, var(--color-secondary-dark), var(--color-secondary));
+  background: linear-gradient(135deg, #FF8C42 0%, #B565D8 100%);
+  border-color: #FFD93D;
   color: var(--color-white);
-  border-color: var(--color-secondary);
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+  transform: translateY(-6px) scale(1.05) rotate(1deg);
+  box-shadow: 0 12px 35px rgba(181, 101, 216, 0.6), inset 0 -3px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* Accent button - Jaune solaire */
@@ -396,20 +405,25 @@ h3, h4, h5, h6 {
   box-shadow: 0 8px 25px rgba(244, 197, 66, 0.4);
 }
 
-/* Beige button - Nouveau style beige */
+/* Info button - Soleil doré */
 .btn-custom-info {
-  background: linear-gradient(135deg, var(--color-beige), var(--color-beige-dark));
-  color: var(--color-text);
-  border-color: var(--color-beige-dark);
+  background: linear-gradient(135deg, #FFD93D 0%, #FFC107 100%);
+  border: 3px solid #FFFFFF;
+  color: #2D3436;
   transform: translateY(0);
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 8px 25px rgba(255, 217, 61, 0.5), inset 0 -3px 10px rgba(0, 0, 0, 0.1);
+  font-weight: 700;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
 }
 
 .btn-custom-info:hover {
-  background: linear-gradient(135deg, var(--color-beige-dark), var(--color-beige));
-  color: var(--color-text);
-  border-color: var(--color-beige-dark);
-  transform: translateY(-4px) scale(1.02);
+  background: linear-gradient(135deg, #FFC107 0%, #FF8C42 100%);
+  border-color: #FF6B6B;
+  color: #FFFFFF;
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 12px 35px rgba(255, 140, 66, 0.6), inset 0 -3px 10px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* Shimmer effect plus doux et fluide */
@@ -642,7 +656,6 @@ h3, h4, h5, h6 {
   color: var(--color-primary) !important;
   background-color: var(--color-primary-light);
   transform: translateY(-1px);
-  text;
 }
 
 .navbar-nav .nav-link.active {
@@ -822,7 +835,7 @@ body {
    ============================================ */
 
 .hero-section {
-  background: linear-gradient(135deg, var(--color-background) 0%, var(--color-primary-light) 100%);
+  background: linear-gradient(135deg, #FFD93D 0%, #FF6B6B 50%, #00A8E8 100%);
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -831,14 +844,15 @@ body {
 }
 
 .hero-section::before {
-  background-color: var(--color-beige) !important;
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23003D82' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.15) 0%, transparent 50%);
   z-index: 1;
 }
 
@@ -851,9 +865,20 @@ body {
 .hero-section h1 {
   font-family: var(--font-heading);
   font-weight: normal;
-  color: var(--color-text);
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  color: #FFFFFF !important;
+  text-shadow: 3px 3px 8px rgba(0,0,0,0.4), 0 0 20px rgba(0,0,0,0.2);
   line-height: 1.1;
+}
+
+.hero-section .lead {
+  color: #FFFFFF;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+  font-weight: 500;
+}
+
+/* Force le titre "Les Enfants des Mousquetaires" en blanc sur la page d'accueil */
+.hero-section h1.text-primary {
+  color: #FFFFFF !important;
 }
 
 .hero-image-placeholder {
@@ -895,19 +920,29 @@ body {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  background: linear-gradient(135deg, #FFD93D 0%, #FF6B6B 50%, #00A8E8 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: var(--space-sm);
-  box-shadow: 0 4px 15px rgba(46, 117, 182, 0.3);
-  animation: bounceScroll 2s infinite;
+  box-shadow: 0 8px 25px rgba(255, 107, 107, 0.5);
+  animation: bounceScroll 2s infinite, scrollGlow 2s ease-in-out infinite;
   transition: all var(--transition-base);
+  border: 3px solid #FFFFFF;
+}
+
+@keyframes scrollGlow {
+  0%, 100% {
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.5);
+  }
+  50% {
+    box-shadow: 0 12px 35px rgba(0, 168, 232, 0.7), 0 0 20px rgba(255, 217, 61, 0.5);
+  }
 }
 
 .scroll-arrow:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(46, 117, 182, 0.4);
+  transform: scale(1.15) rotate(5deg);
+  box-shadow: 0 15px 40px rgba(181, 101, 216, 0.7);
 }
 
 .scroll-arrow i {
@@ -917,12 +952,12 @@ body {
 }
 
 .scroll-text {
-  color: var(--color-primary);
+  color: #FFFFFF;
   font-size: 0.9rem;
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-bold);
   text-align: center;
-  opacity: 0.9;
-  animation: textFade 3s infinite;
+  opacity: 1;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 @keyframes bounceScroll {
@@ -983,35 +1018,74 @@ body {
   transition: all var(--transition-base);
   border-radius: var(--border-radius-lg);
   overflow: hidden;
-  background: var(--color-white);
+  background: linear-gradient(145deg, #FFFFFF 0%, #FFF8E7 100%);
+  border: 3px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  padding: 3px;
+  background: linear-gradient(135deg, #FFD93D, #FF6B6B, #00A8E8);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.service-card:hover::before {
+  opacity: 1;
 }
 
 .service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 20px 50px rgba(255, 107, 107, 0.3);
+  background: linear-gradient(145deg, #FFFFFF 0%, #FFE0DD 100%);
 }
 
 .service-icon {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--color-primary-light), var(--color-secondary-light));
+  background: linear-gradient(135deg, #FFD93D 0%, #FF6B6B 50%, #00A8E8 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
   transition: all var(--transition-base);
+  box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+  border: 4px solid #FFFFFF;
+  animation: iconPulse 3s ease-in-out infinite;
+}
+
+@keyframes iconPulse {
+  0%, 100% {
+    box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+  }
+  50% {
+    box-shadow: 0 12px 30px rgba(0, 168, 232, 0.6);
+  }
 }
 
 .service-icon i {
   font-size: 2rem;
-  color: var(--color-primary);
+  color: #FFFFFF;
   transition: all var(--transition-base);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
 .service-card:hover .service-icon {
-  transform: scale(1.1);
-  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  transform: scale(1.2) rotate(10deg);
+  background: linear-gradient(135deg, #06D6A0 0%, #B565D8 50%, #FF6FB5 100%);
+  box-shadow: 0 15px 40px rgba(181, 101, 216, 0.7);
 }
 
 .service-card:hover .service-icon i {
@@ -1796,20 +1870,8 @@ h1, h2 {
 }
 
 .display-4, .display-5 {
-  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: titleGlow 3s ease-in-out infinite alternate;
-}
-
-@keyframes titleGlow {
-  from {
-    text-shadow: 0 0 10px rgba(46, 117, 182, 0.3);
-  }
-  to {
-    text-shadow: 0 0 20px rgba(46, 117, 182, 0.6), 0 0 30px rgba(255, 107, 53, 0.3);
-  }
+  color: var(--color-primary);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
 }
 
 /* Amélioration des liens avec transition douce */
@@ -1911,4 +1973,17 @@ li:has(.bi-check-circle) {
     min-width: 140px;
     width: auto;
   }
+}
+/* Force white for hero h1 when it uses display-4 + text-primary etc.
+   This neutralises any gradient/background-clip rules that make text transparent. */
+h1.display-4.fw-bold.text-primary.text-center.mb-4,
+.hero-section h1.display-4.text-primary,
+.hero-section h1.display-4.fw-bold {
+  background: none !important;
+  background-image: none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+  color: #FFFFFF !important;
+  text-shadow: 3px 3px 8px rgba(0,0,0,0.4), 0 0 20px rgba(0,0,0,0.2);
 }
