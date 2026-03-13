@@ -16,14 +16,20 @@
     <link rel="stylesheet" href="../styles/main.css">
 </head>
 <body>
+    <!-- Barre téléphone mobile -->
+    <div class="mobile-topbar">
+        <a href="tel:0617654468" class="text-white text-decoration-none">
+            <i class="bi bi-telephone-fill me-1"></i>06 17 65 44 68
+        </a>
+    </div>
+
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top custom-navbar">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top custom-navbar mobile-navbar-offset">
         <div class="container-fluid">
             <a class="navbar-brand fw-bold" href="../../public/index.html">
-                <img src="../assets/images/LOGO.jpeg" alt="Logo Les Enfants des Mousquetaires" class="me-2"
-                    style="height: 70px; width: auto;">
+                <img src="../assets/images/LOGO.png" alt="Logo Les Enfants des Mousquetaires" class="me-2"
+                    style="height: 85px; width: auto;">
                 <span class="navbar-fullname">Les Enfants des Mousquetaires</span>
-                <span class="navbar-shortname">LEDM</span>
             </a>
 
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -73,79 +79,65 @@
                 </div>
             </div>
 
-            <div class="row g-4 text-center text-lg-start">
-                <div class="col-lg-6">
-                    <div class="card h-100 border-0 shadow-sm service-card fade-in">
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card border-0 shadow-sm service-card fade-in">
                         <div class="card-body p-4">
-                            <div class="service-icon mb-4">
+                            <div class="service-icon mb-4 text-center">
                                 <i class="bi bi-balloon-heart"></i>
                             </div>
-                            <h3 class="card-title fw-bold mb-4 text-center">Colonies Enfants</h3>
-                            <div class="mb-4">
-                                <span class="badge bg-primary rounded-pill px-3 py-2 me-2">8-12 ans</span>
+                            <h3 class="card-title fw-bold mb-4 text-center">Colonies de Vacances</h3>
+                            <div class="mb-4 text-center">
+                                <span class="badge bg-primary rounded-pill px-3 py-2 me-2">8-17 ans</span>
                                 <span class="badge bg-secondary rounded-pill px-3 py-2">Été & Vacances</span>
                             </div>
-                            <p class="card-text mb-4">
-                                Des séjours spécialement conçus pour les plus jeunes, avec des activités
-                                ludiques et éducatives adaptées à leur âge. Découverte, jeux et apprentissage
-                                dans un cadre sécurisé et bienveillant.
+                            <p class="card-text mb-4 text-center">
+                                Des séjours inclusifs pour enfants et adolescents, avec des activités
+                                ludiques, sportives et culturelles adaptées à chaque âge. Découverte, jeux
+                                et apprentissage dans un cadre sécurisé, bienveillant et familial.
                             </p>
-                            <ul class="list-unstyled">
-                                <li class="d-flex align-items-center mb-2">
-                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
-                                    <span>Encadrement renforcé</span>
-                                </li>
-                                <li class="d-flex align-items-center mb-2">
-                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
-                                    <span>Activités manuelles et créatives</span>
-                                </li>
-                                <li class="d-flex align-items-center mb-2">
-                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
-                                    <span>Sorties découverte nature</span>
-                                </li>
-                                <li class="d-flex align-items-center">
-                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
-                                    <span>Temps de repos adaptés</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6">
-                    <div class="card h-100 border-0 shadow-sm service-card fade-in">
-                        <div class="card-body p-4">
-                            <div class="service-icon mb-4">
-                                <i class="bi bi-stars"></i>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul class="list-unstyled">
+                                        <li class="d-flex align-items-center mb-2">
+                                            <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                            <span>Encadrement renforcé</span>
+                                        </li>
+                                        <li class="d-flex align-items-center mb-2">
+                                            <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                            <span>Activités manuelles et créatives</span>
+                                        </li>
+                                        <li class="d-flex align-items-center mb-2">
+                                            <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                            <span>Sorties découverte nature</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="list-unstyled">
+                                        <li class="d-flex align-items-center mb-2">
+                                            <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                            <span>Projets participatifs</span>
+                                        </li>
+                                        <li class="d-flex align-items-center mb-2">
+                                            <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                            <span>Activités sportives et aventure</span>
+                                        </li>
+                                        <li class="d-flex align-items-center mb-2">
+                                            <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                            <span>Sorties culturelles</span>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
-                            <h3 class="card-title fw-bold mb-4 text-center">Colonies Adolescents</h3>
-                            <div class="mb-4">
-                                <span class="badge bg-primary rounded-pill px-3 py-2 me-2">13-17 ans</span>
-                                <span class="badge bg-secondary rounded-pill px-3 py-2">Été & Vacances</span>
+                            <div class="mt-4 text-center">
+                                <a href="../assets/documents/projet-pedagogique.pdf" class="btn btn-primary me-2 mb-2" target="_blank">
+                                    <i class="bi bi-file-earmark-pdf me-1"></i>Projet Pédagogique
+                                </a>
+                                <a href="../assets/documents/dossier-inscription.pdf" class="btn btn-outline-primary mb-2" target="_blank">
+                                    <i class="bi bi-file-earmark-text me-1"></i>Dossier d'Inscription
+                                </a>
                             </div>
-                            <p class="card-text mb-4">
-                                Des programmes dynamiques pour les adolescents, mêlant aventure, responsabilisation
-                                et moments de partage. Activités sportives, culturelles et projets collectifs
-                                pour développer autonomie et confiance en soi.
-                            </p>
-                            <ul class="list-unstyled">
-                                <li class="d-flex align-items-center mb-2">
-                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
-                                    <span>Projets participatifs</span>
-                                </li>
-                                <li class="d-flex align-items-center mb-2">
-                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
-                                    <span>Activités sportives et aventure</span>
-                                </li>
-                                <li class="d-flex align-items-center mb-2">
-                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
-                                    <span>Ateliers expression et débats</span>
-                                </li>
-                                <li class="d-flex align-items-center">
-                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
-                                    <span>Sorties culturelles</span>
-                                </li>
-                            </ul>
                         </div>
                     </div>
                 </div>
@@ -399,6 +391,11 @@
                         <li class="mb-2">
                             <i class="bi bi-envelope me-2"></i>lesenfantsdesmousquetaires@yahoo.fr
                         </li>
+                        <li class="mb-2">
+                            <a href="https://www.facebook.com/lesenfantsdsemousquetaires/?locale=fr_FR" target="_blank" class="text-light-50 text-decoration-none">
+                                <i class="bi bi-facebook me-2"></i>Facebook
+                            </a>
+                        </li>
                     </ul>
                 </div>
 
@@ -426,6 +423,11 @@
                     <p class="mb-0 text-light-50">
                         Organisation à but non lucratif
                     </p>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col text-center">
+                    <p class="mb-0 text-light-50 small">SIRET : 488 932 096 00032</p>
                 </div>
             </div>
         </div>

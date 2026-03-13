@@ -49,15 +49,50 @@
 .navbar-fullname {
   display: inline;
 }
-.navbar-shortname {
-  display: none;
+
+/* Bandeau téléphone fixe (mobile + desktop) */
+.mobile-topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1040;
+  background-color: var(--color-primary, #003D82);
+  text-align: center;
+  padding: 4px 0;
+  font-size: 0.85rem;
+  font-weight: 600;
 }
+
+/* Décale la navbar sous le bandeau téléphone */
+.mobile-navbar-offset {
+  top: 28px;
+}
+
+body {
+  padding-top: calc(28px + 90px);
+}
+
+@media (max-width: 991.98px) {
+  body {
+    padding-top: calc(28px + 90px);
+  }
+}
+
+/* Titre hero */
+.hero-title {
+  font-size: clamp(1.8rem, 6vw, 3.5rem);
+  color: #1a1a2e;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.08);
+}
+
 @media (max-width: 576px) {
   .navbar-fullname {
-    display: none;
+    font-size: 0.85rem;
   }
-  .navbar-shortname {
-    display: inline;
+  .hero-title {
+    font-size: clamp(1.6rem, 7vw, 2.2rem);
+    color: #d4002d;
   }
 }
   /* Status colors with better contrast */
@@ -717,13 +752,13 @@ h3, h4, h5, h6 {
 
 /* Correction du padding body pour éviter que la navbar coupe le contenu */
 body {
-  padding-top: 80px;
+  padding-top: calc(28px + 95px);
 }
 
 /* Media queries pour mobile et tablette */
 @media (max-width: 991.98px) {
   body {
-    padding-top: 90px;
+    padding-top: calc(28px + 90px);
   }
 
   .custom-navbar {
@@ -756,12 +791,11 @@ body {
 
 @media (max-width: 767.98px) {
   body {
-    padding-top: 85px;
+    padding-top: calc(28px + 105px);
   }
 
-
   .navbar-brand img {
-    height: 35px !important;
+    height: 55px !important;
   }
 }
 
