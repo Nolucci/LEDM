@@ -70,12 +70,12 @@
 }
 
 body {
-  padding-top: calc(28px + 90px);
+  padding-top: calc(28px + 65px);
 }
 
 @media (max-width: 991.98px) {
   body {
-    padding-top: calc(28px + 90px);
+    padding-top: calc(28px + 65px);
   }
 }
 
@@ -791,7 +791,7 @@ body {
 
 @media (max-width: 767.98px) {
   body {
-    padding-top: calc(28px + 105px);
+    padding-top: calc(28px + 80px);
   }
 
   .navbar-brand img {
@@ -2020,4 +2020,14 @@ h1.display-4.fw-bold.text-primary.text-center.mb-4,
   -webkit-text-fill-color: #FFFFFF !important;
   color: #FFFFFF !important;
   text-shadow: 3px 3px 8px rgba(0,0,0,0.4), 0 0 20px rgba(0,0,0,0.2);
+}
+
+.brochure-cta {
+  margin-top: 93px;
+}
+
+@media (max-width: 767.98px) {
+  .brochure-cta {
+    margin-top: 108px;
+  }
 }
