@@ -51,7 +51,7 @@
 }
 
 /* Bandeau téléphone fixe (mobile + desktop) */
-.mobile-topbar {
+.contact-topbar {
   position: fixed;
   top: 0;
   left: 0;
@@ -64,21 +64,9 @@
   font-weight: 600;
 }
 
-@media (min-width: 992px) {
-  .mobile-topbar {
-    display: none;
-  }
-}
-
 /* Décale la navbar sous le bandeau téléphone */
 .mobile-navbar-offset {
   top: 28px;
-}
-
-@media (min-width: 992px) {
-  .mobile-navbar-offset {
-    top: 0;
-  }
 }
 
 body {
@@ -763,10 +751,8 @@ h3, h4, h5, h6 {
 }
 
 /* Correction du padding body pour éviter que la navbar coupe le contenu */
-@media (min-width: 992px) {
-  body {
-    padding-top: 95px;
-  }
+body {
+  padding-top: calc(28px + 95px);
 }
 
 /* Media queries pour mobile et tablette */
